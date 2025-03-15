@@ -9,7 +9,7 @@ namespace Assets.Scripts
     internal static class Globals
     {
         public static float playerSpeed = 20f;
-        public static float playerTurnRadius = 60f;
+        public static float playerTurnRadius = 89f;
         public static float playerTurnSpeed = .4f;
 
         public static int LastChunks = 1; //comment

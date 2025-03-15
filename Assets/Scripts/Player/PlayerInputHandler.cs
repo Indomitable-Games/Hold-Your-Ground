@@ -45,7 +45,7 @@ public class PlayerInputHandler : MonoBehaviour
         RegisterInputActions();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isMoving)
             MoveInput = CalcDirection();
