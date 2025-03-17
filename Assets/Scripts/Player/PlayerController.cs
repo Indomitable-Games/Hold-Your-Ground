@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     //[SerializeField] private float sprintMultiplier = 1.5f;
 
+    public HealthBar healthBar;
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         inputHandler = PlayerInputHandler.Instance;
+
+        healthBar.SetMaxHealth(Globals.fuel);
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class PlayerController : MonoBehaviour
         //animator.SetFloat("Horizontal", velocity.x);
         //animator.SetFloat("Vertical", velocity.y);
         //animator.SetFloat("Speed", velocity.sqrMagnitude);
-
+        healthBar.SetHealth(healthBar.GetHealth() - 1);
     }
 
     private void OnTriggerStay2D(Collider2D other)
