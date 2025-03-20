@@ -3,7 +3,9 @@ using Assets.Scripts;
 using System;
 using System.Collections.Generic;
 
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 using static FastNoiseLite;
@@ -62,7 +64,7 @@ public class GenWorld : MonoBehaviour
     public Tilemap world;
 
     private GameObject player;
-    public int playerGenDistance = 30;
+    public int playerGenDistance = 50;
 
     public bool autoUpdate;
     public bool ChunkGen;
@@ -142,8 +144,27 @@ public class GenWorld : MonoBehaviour
                 {
                     if (currentHeight >= regions[i].height)
                     {
-                        colorMap[y * width + x] = regions[i].color;
-                        tileArr[y * width + x] = regions[i].tile;
+                        if (yOffset + y > Math.Abs(Globals.battleDepth))
+                        {
+                            if (yOffset + y > Math.Abs(Globals.battleDepth) + 5)
+                            {
+                                colorMap[y * width + x] = Color.clear;
+                                tileArr[y * width + x] = null;
+                            }
+                            else
+                            {
+                                System.Random rand= new System.Random();
+                                int value = rand.Next(5);
+                                colorMap[y * width + x] = (value < (Math.Abs(Globals.battleDepth) + 5)-(yOffset + y) ? regions[i].color : regions[^1].color);
+                                tileArr[y * width + x] = (value < (Math.Abs(Globals.battleDepth) + 5) - (yOffset + y) ? regions[i].tile : regions[^1].tile);
+                            }
+                        }
+                        else
+                        {
+                            colorMap[y * width + x] = regions[i].color;
+                            tileArr[y * width + x] = regions[i].tile;
+                        }
+                        
 
                     }
                     else
@@ -203,6 +224,16 @@ public class GenWorld : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         if (playerPos.y < this.gameObject.transform.position.y - mapChunkSize + playerGenDistance)
             GenChunk(new Vector3(player.transform.position.x, this.transform.position.y - mapChunkSize));
+        if (playerPos.y < Globals.battleDepth-10)
+            LoadBattle();
+
+
+    }
+
+    private void LoadBattle()
+    {
+        Destroy(player);
+        SceneManager.LoadScene("Battle");
 
     }
 
@@ -211,7 +242,8 @@ public class GenWorld : MonoBehaviour
         if (last.Count > Globals.LastChunks)
             foreach (Vector3Int p in last.Dequeue())
                 world.SetTile(p, null);
-            
+        if (origin.y < Globals.battleDepth-10)
+            return;
         int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.playerTurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
         if (width % 2 == 1)
             width++;
