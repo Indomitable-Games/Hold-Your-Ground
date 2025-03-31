@@ -7,6 +7,7 @@ public class BattleGen : MonoBehaviour
     public GameObject enemy;
     private GameObject player;
     public Tilemap world;
+    public int test = 0;
 
     private static System.Random rand;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
