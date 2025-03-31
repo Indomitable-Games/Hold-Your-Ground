@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private float sprintMultiplier = 1.5f;
 
     public HealthBar healthBar;
+    public ResourceManager resourceManager;
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
