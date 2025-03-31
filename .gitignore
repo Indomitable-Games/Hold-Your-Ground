@@ -4,6 +4,7 @@ Packages/
 #ProjectSettings/
 Temp/
 UserSettings/
-
+obj/
+*.csproj
 .vs/
 .vsconfig
