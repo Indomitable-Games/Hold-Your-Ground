@@ -26,7 +26,7 @@ public class ResourceManager : MonoBehaviour
 
             _resources[^1].transform.localPosition = startPos;
             startPos.y -= 2.5f * (_resources[^1].transform as RectTransform).rect.height;
-            _resources[^1].GetComponentInChildren<Image>().sprite = resource.Image;
+            _resources[^1].GetComponentInChildren<Image>().sprite = resource.tile.sprite;
 
             _resources[^1].name = resource.Name;
             foreach (TextMeshProUGUI text in _resources[^1].GetComponentsInChildren<TextMeshProUGUI>())

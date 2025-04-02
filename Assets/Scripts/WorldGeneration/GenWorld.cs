@@ -254,12 +254,16 @@ public class GenWorld : MonoBehaviour
 
 
         Vector3Int[] vector3Ints = new Vector3Int[width * mapChunkSize];
+        TileBase[] tileArr = new TileBase[width * mapChunkSize];
 
         for (int y = 0; y < mapChunkSize; y++)
             for (int x = -width / 2; x < width / 2; x++)
+            {
                 vector3Ints[y * width + x + (width / 2)] = new Vector3Int(x, -y, 0) + Vector3Int.RoundToInt(this.transform.position);
+                tileArr[y * width + x + (width / 2)] = Globals.Planets[0].GetResource(new System.Drawing.Point(vector3Ints[y * width + x + (width / 2)].x,vector3Ints[y * width + x + (width / 2)].y)).tile;
+            }
 
-        world.SetTiles(vector3Ints, mapData.tileArr);
+        world.SetTiles(vector3Ints, tileArr);
         last.Enqueue(vector3Ints);
     }
 }
