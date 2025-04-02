@@ -259,8 +259,9 @@ public class GenWorld : MonoBehaviour
         for (int y = 0; y < mapChunkSize; y++)
             for (int x = -width / 2; x < width / 2; x++)
             {
-                vector3Ints[y * width + x + (width / 2)] = new Vector3Int(x, -y, 0) + Vector3Int.RoundToInt(this.transform.position);
-                tileArr[y * width + x + (width / 2)] = Globals.Planets[0].GetResource(new System.Drawing.Point(vector3Ints[y * width + x + (width / 2)].x,vector3Ints[y * width + x + (width / 2)].y)).tile;
+                int pos = y * width + x + (width / 2);
+                vector3Ints[pos] = new Vector3Int(x, -y, 0) + Vector3Int.RoundToInt(this.transform.position);
+                tileArr[pos] = Globals.Planets[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x,vector3Ints[pos].y)).tile;
             }
 
         world.SetTiles(vector3Ints, tileArr);
