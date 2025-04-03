@@ -64,7 +64,7 @@ namespace Assets.Scripts
                         "test",
                         "test again",
                         1.2f,
-                        Resources.Load("Tile\\TilePalette\\Textures-16_0") as Tile
+                        Resources.Load<Tile>("Tile\\TilePalette\\3x3_Stone_4")
                     )
                 },
                 new List<Ore>()
