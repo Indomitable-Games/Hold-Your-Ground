@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 2afc88a298f922048a107f3179d39d88
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 506304090213223848
+    second: Ores_0000_Lapis-2_0
+  - first:
+      213: -7188978016441659240
+    second: Ores_0000_Lapis-2_1
+  - first:
+      213: -1930399875795012891
+    second: Ores_0000_Lapis-2_2
+  - first:
+      213: 853533831276880316
+    second: Ores_0000_Lapis-2_3
+  - first:
+      213: -7157516291946966190
+    second: Ores_0000_Lapis-2_4
+  - first:
+      213: -3350266214219320967
+    second: Ores_0000_Lapis-2_5
+  - first:
+      213: -8739265129224847981
+    second: Ores_0000_Lapis-2_6
+  - first:
+      213: 6406273591414115653
+    second: Ores_0000_Lapis-2_7
+  - first:
+      213: 882174755679093044
+    second: Ores_0000_Lapis-2_8
+  - first:
+      213: -1807290220697730873
+    second: Ores_0000_Lapis-2_9
+  - first:
+      213: -2678921480796555284
+    second: Ores_0000_Lapis-2_10
+  - first:
+      213: 8764246369809317861
+    second: Ores_0000_Lapis-2_11
+  - first:
+      213: -957744436610521010
+    second: Ores_0000_Lapis-2_12
+  - first:
+      213: 7315051497694065922
+    second: Ores_0000_Lapis-2_13
+  - first:
+      213: 778529831087890872
+    second: Ores_0000_Lapis-2_14
+  - first:
+      213: 954862660590769596
+    second: Ores_0000_Lapis-2_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 186
+        width: 35
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad8c7533e0c60700800000000000000
+      internalID: 506304090213223848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 172
+        width: 91
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89017e7359e9b3c90800000000000000
+      internalID: -7188978016441659240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 109
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2b7c86a87d535e0800000000000000
+      internalID: -1930399875795012891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 127
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb169015f7c58db00800000000000000
+      internalID: 853533831276880316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_4
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 143
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2531e68cad46bac90800000000000000
+      internalID: -7157516291946966190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 142
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971f67ee0a67181d0800000000000000
+      internalID: -3350266214219320967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 138
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d3896eaa4e7b680800000000000000
+      internalID: -8739265129224847981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d4436b3e7a7e850800000000000000
+      internalID: 6406273591414115653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 39
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431c11e244d1e3c00800000000000000
+      internalID: 882174755679093044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 94
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c04645ae173be6e0800000000000000
+      internalID: -1807290220697730873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_10
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 40
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce735f35b1f82dad0800000000000000
+      internalID: -2678921480796555284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_11
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 89
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efbd7c63abd0a970800000000000000
+      internalID: 8764246369809317861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_12
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 64
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48293e528865b2f0800000000000000
+      internalID: -957744436610521010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_13
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2057eb19498448560800000000000000
+      internalID: 7315051497694065922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 17
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1e90da1c4edca00800000000000000
+      internalID: 778529831087890872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0000_Lapis-2_15
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 27
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb51ccdd78a504d00800000000000000
+      internalID: 954862660590769596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ores_0000_Lapis-2_0: 506304090213223848
+      Ores_0000_Lapis-2_1: -7188978016441659240
+      Ores_0000_Lapis-2_10: -2678921480796555284
+      Ores_0000_Lapis-2_11: 8764246369809317861
+      Ores_0000_Lapis-2_12: -957744436610521010
+      Ores_0000_Lapis-2_13: 7315051497694065922
+      Ores_0000_Lapis-2_14: 778529831087890872
+      Ores_0000_Lapis-2_15: 954862660590769596
+      Ores_0000_Lapis-2_2: -1930399875795012891
+      Ores_0000_Lapis-2_3: 853533831276880316
+      Ores_0000_Lapis-2_4: -7157516291946966190
+      Ores_0000_Lapis-2_5: -3350266214219320967
+      Ores_0000_Lapis-2_6: -8739265129224847981
+      Ores_0000_Lapis-2_7: 6406273591414115653
+      Ores_0000_Lapis-2_8: 882174755679093044
+      Ores_0000_Lapis-2_9: -1807290220697730873
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

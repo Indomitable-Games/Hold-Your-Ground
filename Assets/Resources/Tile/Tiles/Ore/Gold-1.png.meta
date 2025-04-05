@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 26e39a374a7e04e41b945a1f5fb88239
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7216080991145530692
+    second: Ores_0003_Gold-1_0
+  - first:
+      213: -7121492201573362909
+    second: Ores_0003_Gold-1_1
+  - first:
+      213: -2581530546483454386
+    second: Ores_0003_Gold-1_2
+  - first:
+      213: -622451626764977831
+    second: Ores_0003_Gold-1_3
+  - first:
+      213: 242411389750767176
+    second: Ores_0003_Gold-1_4
+  - first:
+      213: 3389455115200327796
+    second: Ores_0003_Gold-1_5
+  - first:
+      213: -1490645288063826901
+    second: Ores_0003_Gold-1_6
+  - first:
+      213: 8540260590854119423
+    second: Ores_0003_Gold-1_7
+  - first:
+      213: 1257370755143264514
+    second: Ores_0003_Gold-1_8
+  - first:
+      213: 8487880650596574680
+    second: Ores_0003_Gold-1_9
+  - first:
+      213: 6866708014562404255
+    second: Ores_0003_Gold-1_10
+  - first:
+      213: 2685832097610015229
+    second: Ores_0003_Gold-1_11
+  - first:
+      213: 2787140239889313139
+    second: Ores_0003_Gold-1_12
+  - first:
+      213: -4850832789057801401
+    second: Ores_0003_Gold-1_13
+  - first:
+      213: 4333045196165413745
+    second: Ores_0003_Gold-1_14
+  - first:
+      213: 688354258097251019
+    second: Ores_0003_Gold-1_15
+  - first:
+      213: 4364385485958260279
+    second: Ores_0003_Gold-1_16
+  - first:
+      213: 5452427573928264812
+    second: Ores_0003_Gold-1_17
+  - first:
+      213: -3325528545511629723
+    second: Ores_0003_Gold-1_18
+  - first:
+      213: 7586869470008338177
+    second: Ores_0003_Gold-1_19
+  - first:
+      213: 7090378266100367780
+    second: Ores_0003_Gold-1_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 189
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba625c22945bdb90800000000000000
+      internalID: -7216080991145530692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 219
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 323518ee2906b2d90800000000000000
+      internalID: -7121492201573362909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e980045af8c2cd0800000000000000
+      internalID: -2581530546483454386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 150
+        width: 73
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9593fc81b8b9c57f0800000000000000
+      internalID: -622451626764977831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 182
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e6a97efd73d5300800000000000000
+      internalID: 242411389750767176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 142
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47075ab1873c90f20800000000000000
+      internalID: 3389455115200327796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 167
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2488de120a205be0800000000000000
+      internalID: -1490645288063826901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_7
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 119
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff902752c9158670800000000000000
+      internalID: 8540260590854119423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 137
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209674b3a04137110800000000000000
+      internalID: 1257370755143264514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 123
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d568b22b720bc570800000000000000
+      internalID: 8487880650596574680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 27
+        width: 68
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97e150de827b4f50800000000000000
+      internalID: 6866708014562404255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 81
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df12368001ef54520800000000000000
+      internalID: 2685832097610015229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 114
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37dacc10849eda620800000000000000
+      internalID: 2787140239889313139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 55
+        width: 35
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743746777416eacb0800000000000000
+      internalID: -4850832789057801401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_14
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 97
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17bf62106a1122c30800000000000000
+      internalID: 4333045196165413745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 46
+        width: 51
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2a389fc868d8900800000000000000
+      internalID: 688354258097251019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_16
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 55
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736a969d979619c30800000000000000
+      internalID: 4364385485958260279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_17
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 56
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c640a838df9eaab40800000000000000
+      internalID: 5452427573928264812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_18
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 37
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c9b52486959d1d0800000000000000
+      internalID: -3325528545511629723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 3
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1076a150699f94960800000000000000
+      internalID: 7586869470008338177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Gold-1_20
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 5
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a100127775166260800000000000000
+      internalID: 7090378266100367780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ores_0003_Gold-1_0: -7216080991145530692
+      Ores_0003_Gold-1_1: -7121492201573362909
+      Ores_0003_Gold-1_10: 6866708014562404255
+      Ores_0003_Gold-1_11: 2685832097610015229
+      Ores_0003_Gold-1_12: 2787140239889313139
+      Ores_0003_Gold-1_13: -4850832789057801401
+      Ores_0003_Gold-1_14: 4333045196165413745
+      Ores_0003_Gold-1_15: 688354258097251019
+      Ores_0003_Gold-1_16: 4364385485958260279
+      Ores_0003_Gold-1_17: 5452427573928264812
+      Ores_0003_Gold-1_18: -3325528545511629723
+      Ores_0003_Gold-1_19: 7586869470008338177
+      Ores_0003_Gold-1_2: -2581530546483454386
+      Ores_0003_Gold-1_20: 7090378266100367780
+      Ores_0003_Gold-1_3: -622451626764977831
+      Ores_0003_Gold-1_4: 242411389750767176
+      Ores_0003_Gold-1_5: 3389455115200327796
+      Ores_0003_Gold-1_6: -1490645288063826901
+      Ores_0003_Gold-1_7: 8540260590854119423
+      Ores_0003_Gold-1_8: 1257370755143264514
+      Ores_0003_Gold-1_9: 8487880650596574680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,3 +1,9 @@
+using Assets.Scripts;
+
+using NUnit.Framework;
+
+using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +18,8 @@ public class ShipManager : MonoBehaviour
     private Vector3 startPos;
     private float randomBobHeight;
     private float timeOffset;
+
+    public GameObject shop;
 
     void Start()
     {
@@ -43,5 +51,37 @@ public class ShipManager : MonoBehaviour
     public void LaunchShip()
     {
         SceneManager.LoadScene("Level");
+    }
+
+    public void LoadShop()
+    {
+        InventoryGridDrawer[] x = shop.GetComponentsInChildren<InventoryGridDrawer>();
+        int shopfirst = 1;
+        if(x[0].name == "Shop")
+            shopfirst = 0;
+        List<GameObject> shopItems = new List<GameObject>();
+        int name = 1;
+        Dictionary<DraggableItem,Vector2Int> shopDict = new Dictionary<DraggableItem,Vector2Int>(); ;
+        foreach (Vector2Int[] items in Globals.shop[Globals.shopIndex])
+        {
+            GameObject i = new GameObject($"test {name}");
+            i.AddComponent<Image>();
+            name++;
+            //i.transform.SetParent(x[shopfirst].transform, false);
+            DraggableItem d = i.AddComponent<DraggableItem>();
+            d.Init(items[0], Color.blue);
+            shopDict[d] = items[1];
+        }
+        x[shopfirst].Init(7, 7, true,shopDict);
+        foreach (KeyValuePair<DraggableItem,Vector2Int> t in shopDict)
+        {
+            t.Key.ReInit();
+        }
+        if (shopfirst == 1)
+            shopfirst = 0;
+        else
+            shopfirst = 1;
+        x[shopfirst].Init(7, 7, false);
+        shop.SetActive(true);
     }
 }

@@ -44,5 +44,17 @@ namespace Assets.Scripts.Objects
                 Total = 0;
         }
 
+        public Resource(Resource other)
+        {
+            Name = other.Name;
+            TileName = other.TileName;
+            Description = other.Description;
+            Toughness = other.Toughness;
+            Total = other.Total;
+
+            // Tile is a reference type — clone if needed, otherwise just copy reference
+            tile = other.tile != null ? other.tile : null;
+        }
+
     }
 }

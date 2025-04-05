@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 3a6695af8a5aa344991ad95d0ee7ff20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7374371384971567032
+    second: Ores_0007_Coal-1_0
+  - first:
+      213: -2334059642412033068
+    second: Ores_0007_Coal-1_1
+  - first:
+      213: 2946689120095075105
+    second: Ores_0007_Coal-1_2
+  - first:
+      213: 1471008784475948861
+    second: Ores_0007_Coal-1_3
+  - first:
+      213: -7336038516175760962
+    second: Ores_0007_Coal-1_4
+  - first:
+      213: -849685370005690070
+    second: Ores_0007_Coal-1_5
+  - first:
+      213: 2138889220361338357
+    second: Ores_0007_Coal-1_6
+  - first:
+      213: -765175724690991460
+    second: Ores_0007_Coal-1_7
+  - first:
+      213: 2105857060636883692
+    second: Ores_0007_Coal-1_8
+  - first:
+      213: -1060234924781466055
+    second: Ores_0007_Coal-1_9
+  - first:
+      213: -8069708336447091708
+    second: Ores_0007_Coal-1_10
+  - first:
+      213: -3643136881845885363
+    second: Ores_0007_Coal-1_11
+  - first:
+      213: 4816900892676988879
+    second: Ores_0007_Coal-1_12
+  - first:
+      213: -3034203207339389255
+    second: Ores_0007_Coal-1_13
+  - first:
+      213: -5467736077298918809
+    second: Ores_0007_Coal-1_14
+  - first:
+      213: -8924676104250266307
+    second: Ores_0007_Coal-1_15
+  - first:
+      213: -4490039032612222609
+    second: Ores_0007_Coal-1_16
+  - first:
+      213: 2387340602069521319
+    second: Ores_0007_Coal-1_17
+  - first:
+      213: 4973963961648138475
+    second: Ores_0007_Coal-1_18
+  - first:
+      213: -8658230021608113526
+    second: Ores_0007_Coal-1_19
+  - first:
+      213: -4694549146074479400
+    second: Ores_0007_Coal-1_20
+  - first:
+      213: 2005790270628686073
+    second: Ores_0007_Coal-1_21
+  - first:
+      213: 2645261843692559580
+    second: Ores_0007_Coal-1_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840e6f4eb48f8a990800000000000000
+      internalID: -7374371384971567032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 211
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db94712f11cb9fd0800000000000000
+      internalID: -2334059642412033068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 217
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b76ca742eb4e820800000000000000
+      internalID: 2946689120095075105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 220
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d370b2c12b21a6410800000000000000
+      internalID: 1471008784475948861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 183
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb192c866d7213a90800000000000000
+      internalID: -7336038516175760962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 116
+        width: 68
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29e6f568af4534f0800000000000000
+      internalID: -849685370005690070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 166
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fdbc81e96cdead10800000000000000
+      internalID: 2138889220361338357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 49
+        width: 76
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c969a038bbc8165f0800000000000000
+      internalID: -765175724690991460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_8
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 176
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea720fd6d1893d10800000000000000
+      internalID: 2105857060636883692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e00f904f94941f0800000000000000
+      internalID: -1060234924781466055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 139
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c001de503a20090800000000000000
+      internalID: -8069708336447091708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 144
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46a371ee4af07dc0800000000000000
+      internalID: -3643136881845885363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_12
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 145
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf164247d119d240800000000000000
+      internalID: 4816900892676988879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_13
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 118
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be4f22424854e5d0800000000000000
+      internalID: -3034203207339389255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 98
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a920bc103be14b0800000000000000
+      internalID: -5467736077298918809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_15
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 36
+        width: 55
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3deebe3e5e252480800000000000000
+      internalID: -8924676104250266307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_16
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 41
+        width: 69
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6982810a4d20b1c0800000000000000
+      internalID: -4490039032612222609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_17
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 69
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3983001a9812120800000000000000
+      internalID: 2387340602069521319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8c1a3bed1170540800000000000000
+      internalID: 4973963961648138475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_19
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 3
+        width: 68
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8afc6a2ba9c7d780800000000000000
+      internalID: -8658230021608113526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_20
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 40
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d40e97ac6c99deb0800000000000000
+      internalID: -4694549146074479400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_21
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 54
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8e1cebf9ff5db10800000000000000
+      internalID: 2005790270628686073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0007_Coal-1_22
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 18
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc9033b1abd5b420800000000000000
+      internalID: 2645261843692559580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ores_0007_Coal-1_0: -7374371384971567032
+      Ores_0007_Coal-1_1: -2334059642412033068
+      Ores_0007_Coal-1_10: -8069708336447091708
+      Ores_0007_Coal-1_11: -3643136881845885363
+      Ores_0007_Coal-1_12: 4816900892676988879
+      Ores_0007_Coal-1_13: -3034203207339389255
+      Ores_0007_Coal-1_14: -5467736077298918809
+      Ores_0007_Coal-1_15: -8924676104250266307
+      Ores_0007_Coal-1_16: -4490039032612222609
+      Ores_0007_Coal-1_17: 2387340602069521319
+      Ores_0007_Coal-1_18: 4973963961648138475
+      Ores_0007_Coal-1_19: -8658230021608113526
+      Ores_0007_Coal-1_2: 2946689120095075105
+      Ores_0007_Coal-1_20: -4694549146074479400
+      Ores_0007_Coal-1_21: 2005790270628686073
+      Ores_0007_Coal-1_22: 2645261843692559580
+      Ores_0007_Coal-1_3: 1471008784475948861
+      Ores_0007_Coal-1_4: -7336038516175760962
+      Ores_0007_Coal-1_5: -849685370005690070
+      Ores_0007_Coal-1_6: 2138889220361338357
+      Ores_0007_Coal-1_7: -765175724690991460
+      Ores_0007_Coal-1_8: 2105857060636883692
+      Ores_0007_Coal-1_9: -1060234924781466055
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 09a6661e2c95709429f9945af8990213
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7301264221081351761
+    second: Ores_0003_Copper-1_0
+  - first:
+      213: -1910316691743014914
+    second: Ores_0003_Copper-1_1
+  - first:
+      213: 5519055680310161044
+    second: Ores_0003_Copper-1_2
+  - first:
+      213: -5520991332949420853
+    second: Ores_0003_Copper-1_3
+  - first:
+      213: -7194542082110125644
+    second: Ores_0003_Copper-1_4
+  - first:
+      213: -8098666279587909817
+    second: Ores_0003_Copper-1_5
+  - first:
+      213: 3168882059611036396
+    second: Ores_0003_Copper-1_6
+  - first:
+      213: -8414134413421159823
+    second: Ores_0003_Copper-1_7
+  - first:
+      213: -714444300011066850
+    second: Ores_0003_Copper-1_8
+  - first:
+      213: 8133215033912012354
+    second: Ores_0003_Copper-1_9
+  - first:
+      213: 6303748112319557780
+    second: Ores_0003_Copper-1_10
+  - first:
+      213: -5605584705564634474
+    second: Ores_0003_Copper-1_11
+  - first:
+      213: 3893648529319525281
+    second: Ores_0003_Copper-1_12
+  - first:
+      213: -1433178355149549725
+    second: Ores_0003_Copper-1_13
+  - first:
+      213: -7925700333991585967
+    second: Ores_0003_Copper-1_14
+  - first:
+      213: -9057432159414837341
+    second: Ores_0003_Copper-1_15
+  - first:
+      213: -3749766800511600746
+    second: Ores_0003_Copper-1_16
+  - first:
+      213: 5465479059849319219
+    second: Ores_0003_Copper-1_17
+  - first:
+      213: 800961302262139383
+    second: Ores_0003_Copper-1_18
+  - first:
+      213: 4430689739282909006
+    second: Ores_0003_Copper-1_19
+  - first:
+      213: 1146255095596459448
+    second: Ores_0003_Copper-1_20
+  - first:
+      213: -1254220138103152951
+    second: Ores_0003_Copper-1_21
+  - first:
+      213: 2084184718571633534
+    second: Ores_0003_Copper-1_22
+  - first:
+      213: -2438321273841132928
+    second: Ores_0003_Copper-1_23
+  - first:
+      213: -938110901264643875
+    second: Ores_0003_Copper-1_24
+  - first:
+      213: 2028903305608495027
+    second: Ores_0003_Copper-1_25
+  - first:
+      213: 5905024889485843612
+    second: Ores_0003_Copper-1_26
+  - first:
+      213: 178305701458626262
+    second: Ores_0003_Copper-1_27
+  - first:
+      213: -8466050793434291372
+    second: Ores_0003_Copper-1_28
+  - first:
+      213: -4472501702469246691
+    second: Ores_0003_Copper-1_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 187
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156b2d4102d435560800000000000000
+      internalID: 7301264221081351761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 196
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff782417113d75e0800000000000000
+      internalID: -1910316691743014914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 184
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e2d7866ef979c40800000000000000
+      internalID: 5519055680310161044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_3
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 181
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc41a8752af7163b0800000000000000
+      internalID: -5520991332949420853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_4
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 188
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b90a3a381ad72c90800000000000000
+      internalID: -7194542082110125644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 190
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f6ab26de1cb9f80800000000000000
+      internalID: -8098666279587909817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 149
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea593a91712afb20800000000000000
+      internalID: 3168882059611036396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 137
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a54abb45dfa3b80800000000000000
+      internalID: -8414134413421159823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 171
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1aa906c1b8c516f0800000000000000
+      internalID: -714444300011066850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_9
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 128
+        width: 24
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e21325bfbfed070800000000000000
+      internalID: 8133215033912012354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 122
+        width: 35
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490b85c62896b7750800000000000000
+      internalID: 6303748112319557780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 104
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6921572f866f432b0800000000000000
+      internalID: -5605584705564634474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 117
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abff4e35b4090630800000000000000
+      internalID: 3893648529319525281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_13
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 136
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f488911e35c1ce0800000000000000
+      internalID: -1433178355149549725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 101
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1579c34d981420290800000000000000
+      internalID: -7925700333991585967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_15
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 61
+        width: 64
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af11e870798d4280800000000000000
+      internalID: -9057432159414837341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_16
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 81
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697f3f846f626fbc0800000000000000
+      internalID: -3749766800511600746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_17
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 103
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33397a16f3849db40800000000000000
+      internalID: 5465479059849319219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 107
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f94b2c8f069d1b00800000000000000
+      internalID: 800961302262139383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 79
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e470de3d7d8fc7d30800000000000000
+      internalID: 4430689739282909006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 79
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b52203bfe058ef00800000000000000
+      internalID: 1146255095596459448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_21
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 70
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce5836fd6d189ee0800000000000000
+      internalID: -1254220138103152951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_22
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 73
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b72c485f28cec10800000000000000
+      internalID: 2084184718571633534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_23
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 6
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08adb6068b7592ed0800000000000000
+      internalID: -2438321273841132928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_24
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 38
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8033a0b192bf2f0800000000000000
+      internalID: -938110901264643875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_25
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 9
+        width: 66
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bff86e8ecc182c10800000000000000
+      internalID: 2028903305608495027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_26
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 50
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9cd4afc9dcd2f150800000000000000
+      internalID: 5905024889485843612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_27
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 41
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d64edc3718797200800000000000000
+      internalID: 178305701458626262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_28
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4536fee88ab828a80800000000000000
+      internalID: -8466050793434291372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ores_0003_Copper-1_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11adfed56b7ee1c0800000000000000
+      internalID: -4472501702469246691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ores_0003_Copper-1_0: 7301264221081351761
+      Ores_0003_Copper-1_1: -1910316691743014914
+      Ores_0003_Copper-1_10: 6303748112319557780
+      Ores_0003_Copper-1_11: -5605584705564634474
+      Ores_0003_Copper-1_12: 3893648529319525281
+      Ores_0003_Copper-1_13: -1433178355149549725
+      Ores_0003_Copper-1_14: -7925700333991585967
+      Ores_0003_Copper-1_15: -9057432159414837341
+      Ores_0003_Copper-1_16: -3749766800511600746
+      Ores_0003_Copper-1_17: 5465479059849319219
+      Ores_0003_Copper-1_18: 800961302262139383
+      Ores_0003_Copper-1_19: 4430689739282909006
+      Ores_0003_Copper-1_2: 5519055680310161044
+      Ores_0003_Copper-1_20: 1146255095596459448
+      Ores_0003_Copper-1_21: -1254220138103152951
+      Ores_0003_Copper-1_22: 2084184718571633534
+      Ores_0003_Copper-1_23: -2438321273841132928
+      Ores_0003_Copper-1_24: -938110901264643875
+      Ores_0003_Copper-1_25: 2028903305608495027
+      Ores_0003_Copper-1_26: 5905024889485843612
+      Ores_0003_Copper-1_27: 178305701458626262
+      Ores_0003_Copper-1_28: -8466050793434291372
+      Ores_0003_Copper-1_29: -4472501702469246691
+      Ores_0003_Copper-1_3: -5520991332949420853
+      Ores_0003_Copper-1_4: -7194542082110125644
+      Ores_0003_Copper-1_5: -8098666279587909817
+      Ores_0003_Copper-1_6: 3168882059611036396
+      Ores_0003_Copper-1_7: -8414134413421159823
+      Ores_0003_Copper-1_8: -714444300011066850
+      Ores_0003_Copper-1_9: 8133215033912012354
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

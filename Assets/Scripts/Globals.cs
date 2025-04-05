@@ -1,9 +1,6 @@
 ﻿using Assets.Scripts.Objects;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -21,7 +18,7 @@ namespace Assets.Scripts
         public static int fuel = 5000;
 
         public static Resource[] playerResources = {
-            new Resource("R1", "Soft stuff", 0.1f, Resources.Load("Tile\\TilePalette\\Textures-16_7") as Tile)
+            new Resource("R1", "Soft stuff", 0.1f, Resources.Load("Tile\\TilePalette\\BaseTiles\\Base_Stone_0") as Tile)
         };
 
         #endregion
@@ -31,10 +28,42 @@ namespace Assets.Scripts
 
         public static int planetID = 0;
 
-        public static int battleDepth = int.MinValue / 2;
+        public static int battleDepth = -20000;
         #endregion
 
+        #region shop
+        public static int shopIndex = 0;
 
+        public static List<List<Vector2Int[]>> shop = new List<List<Vector2Int[]>>()
+        {
+            new List<Vector2Int[]>
+            {
+                new Vector2Int[]
+                {
+                    new Vector2Int (2,3),
+                    new Vector2Int (0,0)
+                },
+                new Vector2Int[]
+                {
+                    new Vector2Int (2,3),
+                    new Vector2Int (4,4)
+                }
+            },
+            new List<Vector2Int[]>
+            {
+                new Vector2Int[]
+                {
+                    new Vector2Int (2,2),
+                    new Vector2Int (0,0)
+                },
+                new Vector2Int[]
+                {
+                    new Vector2Int (2,3),
+                    new Vector2Int (2,2)
+                }
+            }
+        };
+        #endregion
 
         #region Planets
 
@@ -64,7 +93,21 @@ namespace Assets.Scripts
                         "test",
                         "test again",
                         1.2f,
-                        Resources.Load<Tile>("Tile\\TilePalette\\3x3_Stone_4")
+                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_0")
+                    ),
+                    new Resource
+                    (
+                        "test",
+                        "test again",
+                        1.2f,
+                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_7")
+                    ),
+                    new Resource
+                    (
+                        "test",
+                        "test again",
+                        1.2f,
+                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_14")
                     )
                 },
                 new List<Ore>()
@@ -76,7 +119,7 @@ namespace Assets.Scripts
                             "test",
                             "test agains",
                             .2f,
-                            Resources.Load("Tile\\TilePalette\\Textures-16_7") as Tile
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Coal-1") as Tile
                         ),
                         .8f
                     ),
@@ -87,7 +130,117 @@ namespace Assets.Scripts
                             "test",
                             "test agains",
                             .2f,
-                            Resources.Load("Tile\\TilePalette\\Textures-16_15") as Tile
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Coal-2") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Copper-1") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Copper-2") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Diamond-1") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Diamond-2") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Gold-1") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Gold-2") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Iron-1") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Iron-2") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Lapis-1") as Tile
+                        ),
+                        .8f
+                    ),
+                    new Ore
+                    (
+                        new Resource
+                        (
+                            "test",
+                            "test agains",
+                            .2f,
+                            Resources.Load("Tile\\TilePalette\\OreTiles\\Lapis-2") as Tile
                         ),
                         .8f
                     )
