@@ -1,4 +1,6 @@
-﻿using Microsoft.Unity.VisualStudio.Editor;
+﻿using Assets.Scripts.DataModels;
+
+using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,5 +58,16 @@ namespace Assets.Scripts.Objects
             tile = other.tile != null ? other.tile : null;
         }
 
+        public Resource(ResourceDataModel model)
+        {
+            Name = model.Name;
+            TileName = model.Name;
+            Description = model.Description;
+            Toughness = model.Toughness;
+            Total = model.Total;
+
+            tile = (Resources.Load(model.TileLocation) as Tile);
+
+        }
     }
 }

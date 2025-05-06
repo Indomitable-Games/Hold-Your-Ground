@@ -1,0 +1,109 @@
+{
+  "Resources": [
+    {
+      "Name": "Base Stone 0",
+      "Description": "test again",
+      "Toughness": 1.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/BaseTiles/Base_Stone_0"
+    },
+    {
+      "Name": "Base Stone 7",
+      "Description": "test again",
+      "Toughness": 1.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/BaseTiles/Base_Stone_7"
+    },
+    {
+      "Name": "Base Stone 14",
+      "Description": "test again",
+      "Toughness": 1.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/BaseTiles/Base_Stone_14"
+    },
+    {
+      "Name": "Coal 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Coal-1"
+    },
+    {
+      "Name": "Coal 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Coal-2"
+    },
+    {
+      "Name": "Copper 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Copper-1"
+    },
+    {
+      "Name": "Copper 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Copper-2"
+    },
+    {
+      "Name": "Diamond 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Diamond-1"
+    },
+    {
+      "Name": "Diamond 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Diamond-2"
+    },
+    {
+      "Name": "Gold 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Gold-1"
+    },
+    {
+      "Name": "Gold 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Gold-2"
+    },
+    {
+      "Name": "Iron 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Iron-1"
+    },
+    {
+      "Name": "Iron 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Iron-2"
+    },
+    {
+      "Name": "Lapis 1",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Lapis-1"
+    },
+    {
+      "Name": "Lapis 2",
+      "Description": "test agains",
+      "Toughness": 0.2,
+      "Total": 0,
+      "TileLocation": "Tile/TilePalette/OreTiles/Lapis-2"
+    }
+  ]
+}

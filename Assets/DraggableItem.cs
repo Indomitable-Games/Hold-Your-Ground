@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.EventSystems;
+
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
@@ -12,78 +13,69 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Color originalColor;
     public int height;
     public int width;
-    public Vector2Int home;
+    private Vector2Int home;
 
     private Vector2 dragOffset;
     private bool isFromShop = false;
     private Transform originalParent;
+    private Vector2Int originalHome;
 
     private bool init = false;
 
     private void Awake()
     {
-        
-    }
-    public void Init(Vector2Int size, Color color)
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
+        rectTransform = GetComponent<RectTransform>(); // ✅ Moved this here for safety
         image = GetComponent<Image>();
+    }
 
+    public void Init(Vector2Int size, Color color, Vector2Int home)
+    {
+        canvas = GetComponentInParent<Canvas>();
 
         init = true;
         this.width = size.x;
         this.height = size.y;
         originalColor = color;
         image.color = color;
+        this.home = home;
+    }
 
-        
-    }
-    public void ReInit()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
-        image = GetComponent<Image>();
-    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!init)
-            Debug.LogError("Moving an unit object is a big nono");
+        {
+            Debug.LogError("Moving an uninitialized object!");
+            return;
+        }
 
         InventoryGridDrawer grid = transform.parent.GetComponentInParent<InventoryGridDrawer>();
-
-
         if (grid == null)
-            Debug.LogError("Item not in an inventory");
-
-
-        if (grid != null && grid.shop)
         {
-            if (Buy()) // Check if purchase is allowed
+            Debug.LogError("Item not in an inventory!");
+            return;
+        }
+
+        if (grid.shop)
+        {
+            if (!Buy())
             {
-                isFromShop = true;  // Mark as originally from a shop
-                
-            }
-            else
-            {
-                isFromShop = false;
-                eventData.pointerDrag = null; // Cancel drag
+                eventData.pointerDrag = null;
                 return;
             }
+
+            isFromShop = true;
         }
-        grid.RemoveItem(this); //its being moved. remove it from where it was
 
-        //store where it was so it can either be replaced or returned home if it is moved to an invalid position
         originalParent = transform.parent;
+        originalHome = home;
+        grid.RemoveItem(this);
+        image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.2f);
 
-        image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.2f); // make the item semi transparent
-
-        Vector2 localPoint;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
             eventData.position,
             canvas.worldCamera,
-            out localPoint))
+            out Vector2 localPoint))
         {
             dragOffset = rectTransform.anchoredPosition - localPoint;
         }
@@ -91,12 +83,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector2 localPoint;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
             eventData.position,
             canvas.worldCamera,
-            out localPoint))
+            out Vector2 localPoint))
         {
             rectTransform.anchoredPosition = localPoint + dragOffset;
         }
@@ -107,7 +98,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.color = originalColor;
 
         PointerEventData pointerData = new PointerEventData(EventSystem.current) { position = eventData.position };
-        List<RaycastResult> raycastResults = new List<RaycastResult>(); //all objects under mouse when drag ends
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, raycastResults);
 
         InventoryGridDrawer potentialGrid = null;
@@ -115,37 +106,50 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         foreach (var result in raycastResults)
         {
             potentialGrid = result.gameObject.GetComponent<InventoryGridDrawer>();
-            if (potentialGrid != null) break; // Stop at the first valid grid
+            if (potentialGrid != null) break;
         }
 
-
-        // If dropped into a shop or no inventory grid is found, sell it (if it's from the shop or not)
         if (potentialGrid == null || potentialGrid.shop)
         {
-            if (isFromShop) // If the item came from the shop, re-add it after selling it
+            if (isFromShop)
             {
-                ReturnOriginal();  // Replace item in shop with a new one
+                ReturnOriginal();
             }
             Sell();
             return;
         }
 
-        // If moving to a valid normal inventory
-        if (potentialGrid.TryAddItem(this))
+        // ✅ Get the local mouse position inside the potential grid
+        RectTransform gridRect = potentialGrid.GetComponent<RectTransform>();
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            gridRect,
+            eventData.position,
+            canvas.worldCamera,
+            out Vector2 localMousePos))
         {
+            ReturnOriginal();
+            Destroy(gameObject);
+            return;
+        }
 
+        // ✅ Convert local position to grid coordinates
+        Vector2Int newHome = potentialGrid.GetGridPositionFromLocal(localMousePos);
+
+        var check = potentialGrid.TryAddItem(this, newHome);
+        if (check != null)
+        {
+            home = (Vector2Int)check;
             if (isFromShop)
             {
-                ReturnOriginal(); // Replace only if the item was originally from the shop
-                isFromShop = false;  // Reset flag to prevent further replacements
+                ReturnOriginal();
+                isFromShop = false;
             }
         }
         else
         {
-            ReturnOriginal(); //put it back a copy, inventory rejected
+            ReturnOriginal();
             Destroy(gameObject);
         }
-
     }
 
     private bool Buy()
@@ -156,7 +160,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void Sell()
     {
-        Debug.Log("Item sold.");
+        Debug.Log($"Item sold. it was {isFromShop}");
         Destroy(gameObject);
     }
 
@@ -165,18 +169,25 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (originalParent == null)
         {
             Debug.LogError("Returned an original without an original");
-            return; // Safety check
+            return;
         }
 
         GameObject replacement = Instantiate(gameObject, originalParent);
-        replacement.name = gameObject.name; // Prevent "(Clone)" from being appended
+        replacement.name = gameObject.name;
 
         DraggableItem replacementItem = replacement.GetComponent<DraggableItem>();
+        replacementItem.Init(new Vector2Int(width, height), originalColor, originalHome);
         replacementItem.transform.SetParent(originalParent);
-        replacementItem.transform.parent.GetComponentInParent<InventoryGridDrawer>().TryAddItem(replacementItem,home);
 
+        var check = replacementItem.transform.parent
+            .GetComponentInParent<InventoryGridDrawer>()
+            .TryAddItem(replacementItem, originalHome);
 
-        replacementItem.isFromShop = false; // Reset so the new item doesn't duplicate again
+        if (check == null || check != originalHome)
+        {
+            Debug.LogError("couldn't return object to original position");
+        }
+
+        replacementItem.isFromShop = false;
     }
-
 }

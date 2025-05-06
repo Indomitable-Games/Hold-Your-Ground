@@ -1,0 +1,20 @@
+{
+  "Tabs": [
+    {
+      "Name": "Base",
+      "FactionFilter": "Base"
+    },
+    {
+      "Name": "Dwarves",
+      "FactionFilter": "Dwarves"
+    },
+    {
+      "Name": "Elves",
+      "FactionFilter": "Elves"
+    },
+    {
+      "Name": "Forerunner",
+      "FactionFilter": "Forerunner"
+    }
+  ]
+}

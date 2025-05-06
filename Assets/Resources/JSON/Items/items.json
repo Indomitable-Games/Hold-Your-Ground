@@ -1,0 +1,109 @@
+{
+  "Items": [
+    {
+      "Id": 1,
+      "Name": "Basic Drill",
+      "Description": "A standard drill for all mining needs.",
+      "Costs": {
+        "Iron": 10,
+        "Copper": 5
+      },
+      "Size": {
+        "x": 1,
+        "y": 1
+      },
+      "Faction": "Base",
+      "Unlocked": true
+    },
+    {
+      "Id": 2,
+      "Name": "Basic Light",
+      "Description": "Provides minimal lighting underground.",
+      "Costs": { "Iron": 8 },
+      "Size": {
+        "x": 1,
+        "y": 1
+      },
+      "Faction": "Base",
+      "Unlocked": true
+    },
+    {
+      "Id": 3,
+      "Name": "Dwarven Forge",
+      "Description": "Smelts ore faster and more efficiently.",
+      "Costs": {
+        "Stone": 20,
+        "Iron": 15
+      },
+      "Size": {
+        "x": 2,
+        "y": 2
+      },
+      "Faction": "Dwarves",
+      "Unlocked": false
+    },
+    {
+      "Id": 4,
+      "Name": "Dwarven Wall",
+      "Description": "Thick wall from the dwarven homeland.",
+      "Costs": { "Stone": 10 },
+      "Size": {
+        "x": 1,
+        "y": 1
+      },
+      "Faction": "Dwarves",
+      "Unlocked": false
+    },
+    {
+      "Id": 5,
+      "Name": "Elven Tree Pod",
+      "Description": "Organic structure grown, not built.",
+      "Costs": {
+        "Wood": 15,
+        "Crystal": 5
+      },
+      "Size": {
+        "x": 2,
+        "y": 2
+      },
+      "Faction": "Elves",
+      "Unlocked": false
+    },
+    {
+      "Id": 6,
+      "Name": "Elven Lightwell",
+      "Description": "Radiates natural bioluminescence.",
+      "Costs": { "Crystal": 10 },
+      "Size": {
+        "x": 1,
+        "y": 1
+      },
+      "Faction": "Elves",
+      "Unlocked": false
+    },
+    {
+      "Id": 7,
+      "Name": "Forerunner Core",
+      "Description": "Ancient tech�powers advanced structures.",
+      "Costs": { "TechFragment": 30 },
+      "Size": {
+        "x": 2,
+        "y": 2
+      },
+      "Faction": "Forerunner",
+      "Unlocked": false
+    },
+    {
+      "Id": 8,
+      "Name": "Forerunner Beam Node",
+      "Description": "Transmits energy through the base.",
+      "Costs": { "TechFragment": 15 },
+      "Size": {
+        "x": 1,
+        "y": 1
+      },
+      "Faction": "Forerunner",
+      "Unlocked": false
+    }
+  ]
+}

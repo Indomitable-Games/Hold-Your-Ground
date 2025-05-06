@@ -144,9 +144,9 @@ public class GenWorld : MonoBehaviour
                 {
                     if (currentHeight >= regions[i].height)
                     {
-                        if (yOffset + y > Math.Abs(Globals.battleDepth))
+                        if (yOffset + y > Math.Abs(Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle]))
                         {
-                            if (yOffset + y > Math.Abs(Globals.battleDepth) + 5)
+                            if (yOffset + y > Math.Abs(Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle]) + 5)
                             {
                                 colorMap[y * width + x] = Color.clear;
                                 tileArr[y * width + x] = null;
@@ -155,8 +155,8 @@ public class GenWorld : MonoBehaviour
                             {
                                 System.Random rand= new System.Random();
                                 int value = rand.Next(5);
-                                colorMap[y * width + x] = (value < (Math.Abs(Globals.battleDepth) + 5)-(yOffset + y) ? regions[i].color : regions[^1].color);
-                                tileArr[y * width + x] = (value < (Math.Abs(Globals.battleDepth) + 5) - (yOffset + y) ? regions[i].tile : regions[^1].tile);
+                                colorMap[y * width + x] = (value < (Math.Abs(Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle]) + 5)-(yOffset + y) ? regions[i].color : regions[^1].color);
+                                tileArr[y * width + x] = (value < (Math.Abs(Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle]) + 5) - (yOffset + y) ? regions[i].tile : regions[^1].tile);
                             }
                         }
                         else
@@ -224,7 +224,7 @@ public class GenWorld : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         if (playerPos.y < this.gameObject.transform.position.y - mapChunkSize + playerGenDistance)
             GenChunk(new Vector3(player.transform.position.x, this.transform.position.y - mapChunkSize));
-        if (playerPos.y < Globals.battleDepth-10)
+        if (playerPos.y < Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle] -10)
             LoadBattle();
 
 
@@ -239,10 +239,10 @@ public class GenWorld : MonoBehaviour
 
     public void GenChunk(Vector3 origin)
     {
-        if (last.Count > Globals.LastChunks)
+        if (last.Count > Globals.lastChunks)
             foreach (Vector3Int p in last.Dequeue())
                 world.SetTile(p, null);
-        if (origin.y < Globals.battleDepth-10)
+        if (origin.y < Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle] -10)
             return;
         int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.playerTurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
         if (width % 2 == 1)
@@ -261,7 +261,7 @@ public class GenWorld : MonoBehaviour
             {
                 int pos = y * width + x + (width / 2);
                 vector3Ints[pos] = new Vector3Int(x, -y, 0) + Vector3Int.RoundToInt(this.transform.position);
-                tileArr[pos] = Globals.Planets[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x,vector3Ints[pos].y)).tile;
+                tileArr[pos] = Globals.PlanetList[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x,vector3Ints[pos].y)).tile;
             }
 
         world.SetTiles(vector3Ints, tileArr);

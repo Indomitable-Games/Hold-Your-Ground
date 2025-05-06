@@ -20,11 +20,14 @@ public class InventoryGridDrawer : MonoBehaviour
     bool init = false;
     private Dictionary<DraggableItem, Vector2Int> itemSpaces;
 
+    float cellWidth;
+    float cellHeight;
+
     public void Init(int width, int height, bool shop, Dictionary<DraggableItem, Vector2Int> items = null)
     {
         this.width = width;
         this.height = height;
-        
+
         rectTransform = GetComponent<RectTransform>();
         occupiedSpaces = new bool[width, height];
 
@@ -39,20 +42,18 @@ public class InventoryGridDrawer : MonoBehaviour
 
         init = true;
 
+
+        cellWidth = rectTransform.rect.width / (float)width;
+        cellHeight = rectTransform.rect.height / (float)height;
+
         DrawGrid();
-
-
-        if (items != null)
-            foreach (KeyValuePair<DraggableItem, Vector2Int> T in items)
-                if (!TryAddItem(T.Key, T.Value))
-                    Debug.LogError($"Hey fuckass {T.Key.name} is in a bad postion, fix it");
     }
-
+    #region Draw
     public void DrawGrid()
     {
         if (!init)
             Debug.LogError("fuckass you are calling an inventory function without initing it first");
-        
+
 
         GameObject gridLinesContainer = new GameObject("GridLines");
         gridLinesContainer.transform.SetParent(transform, false);
@@ -90,65 +91,53 @@ public class InventoryGridDrawer : MonoBehaviour
         lineRect.sizeDelta = size;
         lineRect.anchoredPosition = position;
     }
-
+    #endregion
     public Vector2Int? FindValidLocation(int x, int y, int boxWidth, int boxHeight)
     {
-        // Push the starting coordinates to ensure they're within bounds
-        while (x < 0) x++; // Push right if out of bounds left
-        while (y < 0) y++; // Push up if below grid
+        if (CheckSpot(x, y, boxWidth, boxHeight))
+            return new Vector2Int(x, y);
 
-        while (x + boxWidth > width) x--; // Push left if exceeding width
-        while (y + boxHeight > height) y--; // Push down if exceeding height
+        int maxRadius = Mathf.Max(width, height);
 
-        // Try nudging the box to find a valid location
-        for (int offsetX = -width+boxWidth; offsetX < width-boxWidth; offsetX++)
+        for (int r = 1; r <= maxRadius; r++)
         {
-            for (int offsetY = -height+boxHeight; offsetY < height-boxHeight; offsetY++)
+            for (int dx = -r; dx <= r; dx++)
             {
-                // Check if nudging the box to this position results in a valid space
-                int newX = x + offsetX;
-                int newY = y + offsetY;
-
-                // Make sure the new position is within bounds
-                if (newX < 0 || newY < 0 || newX + boxWidth > this.width || newY + boxHeight > this.height)
+                int dy = r - Mathf.Abs(dx);
+                foreach (int sign in new int[] { 1, -1 })
                 {
-                    continue;
-                }
+                    int newX = x + dx;
+                    int newY = y + dy * sign;
 
-                // Now check if the space is occupied
-                bool isValid = true;
-                for (int i = newX; i < newX + boxWidth; i++)
-                {
-                    for (int j = newY; j < newY + boxHeight; j++)
-                    {
-                        if (occupiedSpaces[i, j]) // If any part is occupied, it's not a valid position
-                        {
-                            isValid = false;
-                            break;
-                        }
-                    }
-                    if (!isValid) break;
-                }
-
-                // If a valid position is found, return the new position
-                if (isValid)
-                {
-                    return new Vector2Int(newX, newY);
+                    if (CheckSpot(newX, newY, boxWidth, boxHeight))
+                        return new Vector2Int(newX, newY);
                 }
             }
         }
 
-        // If no valid location is found, return null
-        return null;
+        return null; // No valid position found
+    }
+    private bool CheckSpot(int x, int y, int boxWidth, int boxHeight)
+    {
+        if (x < 0 || y < 0 || x + boxWidth > width || y + boxHeight > height)
+            return false;
+
+        for (int i = x; i < x + boxWidth; i++)
+            for (int j = y; j < y + boxHeight; j++)
+                if (occupiedSpaces[i, j])
+                    return false;
+
+        return true;
     }
 
-    public bool TryAddItem(DraggableItem item)
+
+    public Vector2Int? TryAddItem(DraggableItem item, Vector2Int posStart)
     {
+        Debug.LogWarning("you used this 2nd function");
+
         item.transform.SetParent(transform.GetChild(0));//make the item a child of the item list
 
 
-        float cellWidth = rectTransform.rect.width / (float)width;
-        float cellHeight = rectTransform.rect.height / (float)height;
 
         Vector2 parentBottomLeft = new Vector2(-rectTransform.rect.width / 2, -rectTransform.rect.height / 2); // Bottom-left of parent
 
@@ -160,113 +149,43 @@ public class InventoryGridDrawer : MonoBehaviour
         float scaleY = (item.height * cellHeight) / itemRect.sizeDelta.y;
         item.transform.localScale = new Vector3(scaleX, scaleY, 1);
 
-        // Convert object's position from center-based to bottom-left-based
-        Vector2 bottomLeft = (Vector2)item.transform.localPosition - new Vector2(itemRect.sizeDelta.x * scaleX / 2, itemRect.sizeDelta.y * scaleY / 2);
-
-        // Convert to grid coordinates relative to bottom-left of parent
-        int gridX = Mathf.RoundToInt((bottomLeft.x - parentBottomLeft.x) / cellWidth);
-        int gridY = Mathf.RoundToInt((bottomLeft.y - parentBottomLeft.y) / cellHeight);
-
         // Try to push into bounds
-        Vector2Int? pos = FindValidLocation(gridX, gridY, item.width, item.height);
+        Vector2Int? pos = FindValidLocation(posStart.x, posStart.y, item.width, item.height); //TODO, just change to an item class when you update the globals
 
 
 
-        if (pos != null)//valid location found
-        {
-            gridY = pos.Value.y;
-            gridX = pos.Value.x;
-        }
-        else
-        {
-            return false; //the item will handle going home and delte itself
-        }
+        if (pos == null)
+            return null;
+
+        Vector2Int setSpaces = (Vector2Int)pos;
 
         // Convert adjusted grid coordinates back to world position
-        Vector2 newBottomLeft = parentBottomLeft + new Vector2(gridX * cellWidth, gridY * cellHeight);
-        Vector2 newCenterPos = newBottomLeft + new Vector2((item.width * cellWidth) / 2, (item.height * cellHeight) / 2);
+        Vector2 anchoredPosition = new Vector2(
+            (setSpaces.x + item.width / 2f) * cellWidth,
+            (setSpaces.y + item.height / 2f) * cellHeight
+        );
 
-        // Move the item to the corrected position
-        item.transform.localPosition = newCenterPos;
-        item.home = new Vector2Int(gridX, gridY);
-        Debug.Log($"Item {item.name} placed at grid cell: ({gridX}, {gridY}) at position {newCenterPos}");
+        // Convert to local position relative to anchor/pivot
+        item.transform.localPosition = parentBottomLeft + anchoredPosition;
 
 
+        Debug.Log($"Item {item.name} placed at grid cell: ({setSpaces.x}, {setSpaces.y}) at position {item.transform.localPosition}");
 
-        Vector2Int setSpaces = new Vector2Int(gridX, gridY);
+
         for (int x = setSpaces.x; x < setSpaces.x + item.width; x++)
             for (int y = setSpaces.y; y < setSpaces.y + item.height; y++)
                 occupiedSpaces[x, y] = true; //occupi grid
 
 
-        item.home = setSpaces;
         itemSpaces[item] = setSpaces;//add item to dictionary of items in inventory
 
-        return true;
-    }
-    public bool TryAddItem(DraggableItem item, Vector2Int posStart)
-    {
-        item.transform.SetParent(transform.GetChild(0));//make the item a child of the item list
-
-
-        float cellWidth = rectTransform.rect.width / (float)width;
-        float cellHeight = rectTransform.rect.height / (float)height;
-
-        Vector2 parentBottomLeft = new Vector2(-rectTransform.rect.width / 2, -rectTransform.rect.height / 2); // Bottom-left of parent
-
-
-        RectTransform itemRect = item.GetComponent<RectTransform>();
-
-        // Scale to fit the grid cells
-        float scaleX = (item.width * cellWidth) / itemRect.sizeDelta.x;
-        float scaleY = (item.height * cellHeight) / itemRect.sizeDelta.y;
-        item.transform.localScale = new Vector3(scaleX, scaleY, 1);
-
-
-        // Convert to grid coordinates relative to bottom-left of parent
-        int gridX = posStart.x;
-        int gridY = posStart.y;
-
-        // Try to push into bounds
-        Vector2Int? pos = FindValidLocation(gridX, gridY, item.width, item.height);
-
-
-
-        if (pos != null)//valid location found
-        {
-            gridY = pos.Value.y;
-            gridX = pos.Value.x;
-        }
-        else
-        {
-            return false; //the item will handle going home and delte itself
-        }
-
-        // Convert adjusted grid coordinates back to world position
-        Vector2 newBottomLeft = parentBottomLeft + new Vector2(gridX * cellWidth, gridY * cellHeight);
-        Vector2 newCenterPos = newBottomLeft + new Vector2((item.width * cellWidth) / 2, (item.height * cellHeight) / 2);
-
-        // Move the item to the corrected position
-        item.transform.localPosition = newCenterPos;
-        item.home = new Vector2Int(gridX, gridY);
-        Debug.Log($"Item {item.name} placed at grid cell: ({gridX}, {gridY}) at position {newCenterPos}");
-
-
-
-        Vector2Int setSpaces = new Vector2Int(gridX, gridY);
-        for (int x = setSpaces.x; x < setSpaces.x + item.width; x++)
-            for (int y = setSpaces.y; y < setSpaces.y + item.height; y++)
-                occupiedSpaces[x, y] = true; //occupi grid
-
-
-        item.home = setSpaces;
-        itemSpaces[item] = setSpaces;//add item to dictionary of items in inventory
-
-        return true;
+        return setSpaces;
     }
 
     public void RemoveItem(DraggableItem item)
     {
+        Debug.LogWarning("This fuction was also called");
+
         if (itemSpaces.ContainsKey(item))
         {
             Vector2Int clearSpaces = itemSpaces[item];
@@ -293,4 +212,21 @@ public class InventoryGridDrawer : MonoBehaviour
             Debug.LogError("trying to remove item not in this inventory. How did we get here?");
         }
     }
+
+    public Vector2Int GetGridPositionFromLocal(Vector2 localPosition)
+    {
+        // Shift localPosition from center-based to bottom-left-based
+        float adjustedX = localPosition.x + rectTransform.rect.width / 2f;
+        float adjustedY = localPosition.y + rectTransform.rect.height / 2f;
+
+        int x = Mathf.FloorToInt(adjustedX / cellWidth);
+        int y = Mathf.FloorToInt(adjustedY / cellHeight);
+
+        x = Mathf.Clamp(x, 0, width - 1);
+        y = Mathf.Clamp(y, 0, height - 1);
+
+        return new Vector2Int(x, y);
+    }
+
+
 }

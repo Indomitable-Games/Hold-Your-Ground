@@ -3,6 +3,7 @@ using Assets.Scripts;
 using NUnit.Framework;
 
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,7 @@ public class ShipManager : MonoBehaviour
     private float randomBobHeight;
     private float timeOffset;
 
-    public GameObject shop;
+    public GameObject DropShipInvetory;
 
     void Start()
     {
@@ -55,33 +56,34 @@ public class ShipManager : MonoBehaviour
 
     public void LoadShop()
     {
-        InventoryGridDrawer[] x = shop.GetComponentsInChildren<InventoryGridDrawer>();
-        int shopfirst = 1;
-        if(x[0].name == "Shop")
-            shopfirst = 0;
-        List<GameObject> shopItems = new List<GameObject>();
+        DropShipInvetory.GetComponentsInChildren<InventoryGridDrawer>().FirstOrDefault(x => x.name != "Shop").Init(7, 7, false); //init the player inventory
+
+        InventoryGridDrawer shop = DropShipInvetory.GetComponentsInChildren<InventoryGridDrawer>().FirstOrDefault(x => x.name == "Shop"); //get the shop
+
+        shop.Init(7, 7, true); //init the shop
+
+
         int name = 1;
-        Dictionary<DraggableItem,Vector2Int> shopDict = new Dictionary<DraggableItem,Vector2Int>(); ;
-        foreach (Vector2Int[] items in Globals.shop[Globals.shopIndex])
+
+        /*foreach (Vector2Int[] item in Globals.shop[Globals.shopIndex]) //for each intem in shop at shopindex
         {
-            GameObject i = new GameObject($"test {name}");
-            i.AddComponent<Image>();
+            GameObject i = new GameObject($"test {name}"); //make a gameobject for item
+            i.AddComponent<Image>(); //give it an image object (set to sprite, if preab wont need to do this)
             name++;
-            //i.transform.SetParent(x[shopfirst].transform, false);
+
             DraggableItem d = i.AddComponent<DraggableItem>();
-            d.Init(items[0], Color.blue);
-            shopDict[d] = items[1];
-        }
-        x[shopfirst].Init(7, 7, true,shopDict);
-        foreach (KeyValuePair<DraggableItem,Vector2Int> t in shopDict)
-        {
-            t.Key.ReInit();
-        }
-        if (shopfirst == 1)
-            shopfirst = 0;
-        else
-            shopfirst = 1;
-        x[shopfirst].Init(7, 7, false);
-        shop.SetActive(true);
+
+            d.Init(item[0], Color.blue, item[1]);
+
+            var check = shop.TryAddItem(d, item[1]);
+            if (check == null || check != item[1])
+                Debug.LogError("didnt place item at correct spot in shop");
+            
+            d.Init(item[0], Color.blue, item[1]);
+
+        }*/
+
+
+        this.DropShipInvetory.SetActive(true);
     }
 }

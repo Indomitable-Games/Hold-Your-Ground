@@ -1,4 +1,7 @@
-﻿using Assets.Scripts.Objects;
+﻿using Assets.Scripts.DataModels;
+using Assets.Scripts.Objects;
+
+using Newtonsoft.Json;
 
 using System.Collections.Generic;
 
@@ -24,229 +27,92 @@ namespace Assets.Scripts
         #endregion
 
         #region WorldGen Config
-        public static int LastChunks = 3;
+        public static int lastChunks = 3;
 
         public static int planetID = 0;
-
-        public static int battleDepth = -20000;
+        public static int currentBattle = 0;
         #endregion
 
-        #region shop
-        public static int shopIndex = 0;
+        public static Dictionary<string, Resource> ResourceDictionary;
+        public static List<Planet> PlanetList;
+        public static List<ShopTab> ShopTabList;
+        public static List<Item> ItemList;
 
-        public static List<List<Vector2Int[]>> shop = new List<List<Vector2Int[]>>()
+        public static void LoadEverything()
         {
-            new List<Vector2Int[]>
+            ResourceDictionary = LoadAllResources();
+            PlanetList = LoadAllPlanets();
+            ShopTabList = LoadAllShopTabs();
+            ItemList = LoadAllItems();
+
+            Debug.Log("everytingLoaded");
+        }
+        public static Dictionary<string, Resource> LoadAllResources()
+        {
+            var resouceDataList = new List<ResourceDataModel>();
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Resource");
+
+            foreach (var file in jsonFiles)
             {
-                new Vector2Int[]
-                {
-                    new Vector2Int (2,3),
-                    new Vector2Int (0,0)
-                },
-                new Vector2Int[]
-                {
-                    new Vector2Int (2,3),
-                    new Vector2Int (4,4)
-                }
-            },
-            new List<Vector2Int[]>
-            {
-                new Vector2Int[]
-                {
-                    new Vector2Int (2,2),
-                    new Vector2Int (0,0)
-                },
-                new Vector2Int[]
-                {
-                    new Vector2Int (2,3),
-                    new Vector2Int (2,2)
-                }
+                var wrapper = JsonConvert.DeserializeObject<ResourceDataList>(file.text);
+                if (wrapper?.Resources != null)
+                    resouceDataList.AddRange(wrapper.Resources);
             }
-        };
-        #endregion
+            var resourceDict = new Dictionary<string, Resource>();
+            foreach (ResourceDataModel resouseData in resouceDataList)
+                resourceDict[resouseData.Name] = new Resource(resouseData);
 
-        #region Planets
+            return resourceDict;
+        }
 
-        public static List<Planet> Planets = new List<Planet>()
+        public static List<Planet> LoadAllPlanets()
         {
-            new Planet
-            (
-                1455,
-                .03f,
-                FastNoiseLite.NoiseType.OpenSimplex2,
-                FastNoiseLite.FractalType.None,
-                4,
-                2,
-                .5f,
-                .05f,
-                2,
-                FastNoiseLite.CellularDistanceFunction.EuclideanSq,
-                FastNoiseLite.CellularReturnType.Distance,
-                1,
-                FastNoiseLite.DomainWarpType.OpenSimplex2,
-                2.12f,
-                .9f,
-                new List<Resource>()
-                {
-                    new Resource
-                    (
-                        "test",
-                        "test again",
-                        1.2f,
-                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_0")
-                    ),
-                    new Resource
-                    (
-                        "test",
-                        "test again",
-                        1.2f,
-                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_7")
-                    ),
-                    new Resource
-                    (
-                        "test",
-                        "test again",
-                        1.2f,
-                        Resources.Load<Tile>("Tile\\TilePalette\\BaseTiles\\Base_Stone_14")
-                    )
-                },
-                new List<Ore>()
-                {
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Coal-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Coal-2") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Copper-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Copper-2") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Diamond-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Diamond-2") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Gold-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Gold-2") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Iron-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Iron-2") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Lapis-1") as Tile
-                        ),
-                        .8f
-                    ),
-                    new Ore
-                    (
-                        new Resource
-                        (
-                            "test",
-                            "test agains",
-                            .2f,
-                            Resources.Load("Tile\\TilePalette\\OreTiles\\Lapis-2") as Tile
-                        ),
-                        .8f
-                    )
-                }
-            )
-        };
-        #endregion
+            var planetDataList = new List<PlanetConfigDataModel>();
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Planets");
+
+            foreach (var file in jsonFiles)
+            {
+                var wrapper = JsonConvert.DeserializeObject<PlanetList>(file.text);
+                if (wrapper?.planetList != null)
+                    planetDataList.AddRange(wrapper.planetList);
+            }
+            var planetList = new List<Planet>();
+            foreach (PlanetConfigDataModel planetData in planetDataList)
+
+                planetList.Add(new Planet(planetData));
+
+            return planetList;
+        }
+
+        public static List<ShopTab> LoadAllShopTabs()
+        {
+            var itemList = new List<ShopTab>();
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Items");
+
+            foreach (var file in jsonFiles)
+            {
+                var wrapper = JsonConvert.DeserializeObject<ShopTabList>(file.text);
+                if (wrapper?.TabList != null)
+                    itemList.AddRange(wrapper.TabList);
+            }
+
+            return itemList;
+        }
+
+        public static List<Item> LoadAllItems()
+        {
+            var itemList = new List<Item>();
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/ShopTabs");
+
+            foreach (var file in jsonFiles)
+            {
+                var wrapper = JsonConvert.DeserializeObject<ItemList>(file.text);
+                if (wrapper?.Items != null)
+                    itemList.AddRange(wrapper.Items);
+            }
+
+            return itemList;
+        }
+       
     }
 }

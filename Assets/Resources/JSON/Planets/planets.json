@@ -1,0 +1,38 @@
+{
+  "planets": [
+    {
+      "seed": 42,
+      "veinHeight": 0.65,
+      "rockVariantNames": [ "Base Stone 0", "Base Stone 7", "Base Stone 14" ],
+      "ores": [
+        {
+          "resourceName": "Iron 1",
+          "spawnChance": 0.5
+        },
+        {
+          "resourceName": "Gold 2",
+          "spawnChance": 0.3
+        },
+        {
+          "resourceName": "Copper 2",
+          "spawnChance": 0.2
+        }
+      ],
+      "battleDepths": [ -10000, 2000, 3000 ],
+      "frequency": 0.015,
+      "noiseType": "OpenSimplex2",
+      "fractalType": "FBm",
+      "octaves": 5,
+      "lacunarity": 2.0,
+      "gain": 0.5,
+      "weightedStrength": 0.8,
+      "pingPongStrength": 1.5,
+      "cellularDistanceFunction": "Euclidean",
+      "cellularReturnType": "CellValue",
+      "cellularJitterModifier": 0.45,
+      "domainWarpType": "OpenSimplex2",
+      "domainWarpAmp": 20.0
+    }
+  ]
+
+}
