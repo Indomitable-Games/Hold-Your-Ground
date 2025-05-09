@@ -20,6 +20,8 @@ namespace Assets.Scripts.Objects
         public string Description { get; set; }
         public float Toughness { get; set; }
         public int Total { get; set; }
+        public List<string> TileList { get; set; }
+        public bool IsBaseTile { get; set; }
         public Tile tile { get; set; }
         public Resource(string name, string description, float toughness, Tile tile = null)
         {
@@ -61,7 +63,7 @@ namespace Assets.Scripts.Objects
         public Resource(ResourceDataModel model)
         {
             Name = model.Name;
-            TileName = model.Name;
+            TileName = model.TileLocation.Split('/')[^1];
             Description = model.Description;
             Toughness = model.Toughness;
             Total = model.Total;

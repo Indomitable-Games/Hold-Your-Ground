@@ -87,7 +87,7 @@ public class GenWorld : MonoBehaviour
 
     public void DrawMapInEditor()
     {
-        int width = (int)(2 * (mapChunkSize + playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.playerTurnRadius * Mathf.Deg2Rad))) + 4 * playerGenDistance;
+        int width = (int)(2 * (mapChunkSize + playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.Player.TurnRadius * Mathf.Deg2Rad))) + 4 * playerGenDistance;
         if (width % 2 == 1)
             width++;
         MapData mapData = GenerateMapData(xOffset, yOffset, width, mapChunkSize);
@@ -244,7 +244,7 @@ public class GenWorld : MonoBehaviour
                 world.SetTile(p, null);
         if (origin.y < Globals.PlanetList[Globals.planetID].BattleDepths[Globals.currentBattle] -10)
             return;
-        int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.playerTurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
+        int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.Player.TurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
         if (width % 2 == 1)
             width++;
         
