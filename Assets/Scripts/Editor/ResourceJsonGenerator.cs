@@ -22,7 +22,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/BaseTiles/Base_Stone_0",
                     "Tile/TilePalette/BaseTiles/Base_Stone_7"
                 },
-                .5f
+                .5f,
+                true
             ),
             new(
                 "Coal",
@@ -33,7 +34,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Coal-1",
                     "Tile/TilePalette/OreTiles/Coal-2"
                 },
-                .5f
+                .5f,
+                false
             ),
             new(
                 "Copper",
@@ -44,7 +46,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Copper-1",
                     "Tile/TilePalette/OreTiles/Copper-2"
                 },
-                .5f
+                .5f,
+                false
             ),
             new(
                 "Diamond",
@@ -55,7 +58,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Diamond-1",
                     "Tile/TilePalette/OreTiles/Diamond-2"
                 },
-                .5f
+                .5f,
+                false
             ),
             new(
                 "Gold",
@@ -66,7 +70,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Gold-1",
                     "Tile/TilePalette/OreTiles/Gold-2"
                 },
-                .5f
+                .5f,
+                false
             ),
             new(
                 "Iron",
@@ -77,7 +82,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Iron-1",
                     "Tile/TilePalette/OreTiles/Iron-2"
                 },
-                .5f
+                .5f,
+                false
             ),
             new(
                 "Lapis",
@@ -88,7 +94,8 @@ public static class ResourceJsonGenerator
                     "Tile/TilePalette/OreTiles/Lapis-1",
                     "Tile/TilePalette/OreTiles/Lapis-2"
                 },
-                .5f
+                .5f,
+                false
             )
         };
 

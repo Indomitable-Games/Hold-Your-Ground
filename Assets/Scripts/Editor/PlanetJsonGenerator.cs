@@ -17,10 +17,10 @@ public static class PlanetJsonGenerator
                 new PlanetConfigDataModel(
                     new List<OreConfig>
                     {
-                        new OreConfig("Stone",1, true),
-                        new OreConfig("Iron", 0.5f, false),
-                        new OreConfig("Gold", 0.3f, false),
-                        new OreConfig("Copper", 0.2f, false)
+                        new OreConfig("Stone",1),
+                        new OreConfig("Iron", 0.5f),
+                        new OreConfig("Gold", 0.3f),
+                        new OreConfig("Copper", 0.2f)
                     },
                     42,
                     0.65f,

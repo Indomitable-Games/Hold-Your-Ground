@@ -49,6 +49,7 @@ namespace Assets.Scripts.Objects
             Description = model.Description;
             Toughness = model.Toughness;
             mainSpawnChance = model.MainTileChance;
+            IsBaseTile = model.IsBase;
 
         }
     }

@@ -26,8 +26,6 @@ namespace Assets.Scripts.DataModels
         [JsonProperty("toughness")]
         public float Toughness { get; set; }
 
-
-
         [JsonProperty("tileLocations")]
         public List<string> TileLocations { get; set; }
 
@@ -35,13 +33,17 @@ namespace Assets.Scripts.DataModels
         [JsonProperty("mainTileChance")]
         public float MainTileChance { get; set; }
 
-        public ResourceDataModel(string name, string description, float toughness, List<string> tileLocations, float mainTileChance)  
+        [JsonProperty("isBase")]
+        public bool IsBase { get; set; }
+
+        public ResourceDataModel(string name, string description, float toughness, List<string> tileLocations, float mainTileChance, bool isBase)  
         {
             Name = name;
             Description = description;
             Toughness = toughness;
             TileLocations = tileLocations;
             MainTileChance = mainTileChance;
+            IsBase = isBase;
         }
     }
 }

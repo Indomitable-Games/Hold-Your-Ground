@@ -125,15 +125,10 @@ namespace Assets.Scripts.Objects
         [JsonProperty("spawnChance")]
         public float SpawnChance { get; set; }
 
-
-        [JsonProperty("isBase")]
-        public bool IsBase {get; set; }
-
-        public OreConfig(string resourceName, float spawnChance, bool isBase)
+        public OreConfig(string resourceName, float spawnChance)
         {
             ResourceName = resourceName;
             SpawnChance = spawnChance;
-            IsBase = isBase;
         }
     }
 }

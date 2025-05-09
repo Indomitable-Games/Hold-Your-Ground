@@ -4,23 +4,19 @@
       "tiles": [
         {
           "resourceName": "Stone",
-          "spawnChance": 1.0,
-          "isBase": true
+          "spawnChance": 1.0
         },
         {
           "resourceName": "Iron",
-          "spawnChance": 0.5,
-          "isBase": false
+          "spawnChance": 0.5
         },
         {
           "resourceName": "Gold",
-          "spawnChance": 0.3,
-          "isBase": false
+          "spawnChance": 0.3
         },
         {
           "resourceName": "Copper",
-          "spawnChance": 0.2,
-          "isBase": false
+          "spawnChance": 0.2
         }
       ],
       "seed": 42,
