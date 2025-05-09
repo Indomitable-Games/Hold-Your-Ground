@@ -28,8 +28,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        MaxTurnAngle = Globals.playerTurnRadius;
-        TurnSpeed = Globals.playerTurnSpeed;
+        MaxTurnAngle = Globals.Player.TurnRadius;
+        TurnSpeed = Globals.Player.TurnSpeed;
 
         if (Instance == null)
         {

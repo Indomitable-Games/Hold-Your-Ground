@@ -15,15 +15,7 @@ namespace Assets.Scripts
     {
         #region PlayerStats
 
-        public static float playerSpeed = 20f;
-        public static float playerTurnRadius = 30f;
-        public static float playerTurnSpeed = .4f;
-
-        public static int fuel = 5000;
-
-        public static Resource[] playerResources = {
-            new Resource("R1", "Soft stuff", 0.1f, Resources.Load("Tile\\TilePalette\\BaseTiles\\Base_Stone_0") as Tile)
-        };
+        public static Player Player = new Player();
 
         #endregion
 
@@ -34,6 +26,7 @@ namespace Assets.Scripts
         public static int currentBattle = 0;
         #endregion
 
+        public static Dictionary<string, string> TileResourceMap = new Dictionary<string, string>();
         public static Dictionary<string, Resource> ResourceDictionary;
         public static List<Planet> PlanetList;
         public static List<FactionDataModel> ShopTabList;
@@ -66,9 +59,15 @@ namespace Assets.Scripts
                     resouceDataList.AddRange(wrapper.Resources);
             }
             var resourceDict = new Dictionary<string, Resource>();
-            foreach (ResourceDataModel resouseData in resouceDataList)
-                resourceDict[resouseData.Name] = new Resource(resouseData);
-
+            foreach (ResourceDataModel resourceData in resouceDataList)
+            {
+                //There will be a global TileName->Resource map Dict<string, string>
+                resourceDict[resourceData.Name] = new Resource(resourceData);
+                //foreach (string tile in resourceDict[resourceData.Name].TileList)
+                //{
+                //    TileResourceMap[tile] = resourceData.Name;
+                //}
+            }
             return resourceDict;
         }
 

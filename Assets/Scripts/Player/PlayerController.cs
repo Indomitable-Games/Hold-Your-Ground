@@ -1,5 +1,6 @@
 using Assets.Scripts;
-
+using Assets.Scripts.Objects;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         //collider2D = GetComponent<Collider2D>();
-        moveSpeed = Globals.playerSpeed;
+        moveSpeed = Globals.Player.Speed;
     }
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         inputHandler = PlayerInputHandler.Instance;
 
-        healthBar.SetMaxHealth(Globals.fuel);
+        healthBar.SetMaxHealth(Globals.Player.Fuel);
     }
 
     // Update is called once per frame
@@ -71,9 +72,20 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag != "World")
             return;
+        List<TileBase> actualCollides = new List<TileBase>();
+        actualCollides.Add(other.gameObject.GetComponent<Tilemap>().GetTile(Vector3Int.RoundToInt(this.gameObject.transform.position)));
+        actualCollides.Add(other.gameObject.GetComponent<Tilemap>().GetTile(Vector3Int.RoundToInt(this.gameObject.transform.position) - new Vector3Int(1, 0, 0)));
         other.gameObject.GetComponent<Tilemap>().SetTile(Vector3Int.RoundToInt(this.gameObject.transform.position) - new Vector3Int(1,0,0), null);
         other.gameObject.GetComponent<Tilemap>().SetTile(Vector3Int.RoundToInt(this.gameObject.transform.position), null);
 
+        foreach(TileBase tile in actualCollides)
+        {
+            Debug.Log(tile.name + actualCollides.IndexOf(tile));
+            string resourceKey = Globals.TileResourceMap[tile.name];
+            Resource resourceDictKey = Globals.ResourceDictionary[resourceKey];
 
+            Globals.Player.PlayerResources[resourceDictKey] = Globals.Player.PlayerResources.GetValueOrDefault(resourceDictKey, 0) + 1;
+            Debug.Log(resourceDictKey.Name + ": " + Globals.Player.PlayerResources[resourceDictKey]);
+        }
     }
 }

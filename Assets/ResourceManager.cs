@@ -19,7 +19,7 @@ public class ResourceManager : MonoBehaviour
     void Start()
     {
         startPos.y -= (resourcePreFab.transform as RectTransform).rect.height * .75f;
-        foreach (Resource resource in Globals.playerResources)
+        foreach (Resource resource in Globals.Player.PlayerResources.Keys)
         {
             _resources.Add(Instantiate(resourcePreFab));
             _resources[^1].transform.SetParent(this.transform);
