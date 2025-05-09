@@ -127,9 +127,13 @@ public class PlayerController : MonoBehaviour
                     if (Globals.TileResourceMap.TryGetValue(tile.name, out string resourceKey))
                     {
                         Resource resource = Globals.ResourceDictionary[resourceKey];
-                        int currentAmount = Globals.Player.PlayerResources.GetValueOrDefault(resource, 0);
-                        Globals.Player.PlayerResources[resource] = currentAmount + 1;
-                        Debug.Log($"{resource.Name}: {Globals.Player.PlayerResources[resource]}");
+                        if ((!resource.IsBaseTile))
+                        {
+                            int currentAmount = Globals.Player.PlayerResources.GetValueOrDefault(resource, 0);
+                            Globals.Player.PlayerResources[resource] = currentAmount + 1;
+                            Debug.Log($"{resource.Name}: {Globals.Player.PlayerResources[resource]}");
+
+                        }
                     }
 
                     // Clear the tile
