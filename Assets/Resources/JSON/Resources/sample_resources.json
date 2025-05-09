@@ -1,0 +1,75 @@
+{
+  "resources": [
+    {
+      "name": "Stone",
+      "description": "test again",
+      "toughness": 1.2,
+      "tileLocations": [
+        "Tile/TilePalette/BaseTiles/Base_Stone_14",
+        "Tile/TilePalette/BaseTiles/Base_Stone_0",
+        "Tile/TilePalette/BaseTiles/Base_Stone_7"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Coal",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Coal-1",
+        "Tile/TilePalette/OreTiles/Coal-2"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Copper",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Copper-1",
+        "Tile/TilePalette/OreTiles/Copper-2"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Diamond",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Diamond-1",
+        "Tile/TilePalette/OreTiles/Diamond-2"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Gold",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Gold-1",
+        "Tile/TilePalette/OreTiles/Gold-2"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Iron",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Iron-1",
+        "Tile/TilePalette/OreTiles/Iron-2"
+      ],
+      "mainTileChance": 0.5
+    },
+    {
+      "name": "Lapis",
+      "description": "test agains",
+      "toughness": 0.2,
+      "tileLocations": [
+        "Tile/TilePalette/OreTiles/Lapis-1",
+        "Tile/TilePalette/OreTiles/Lapis-2"
+      ],
+      "mainTileChance": 0.5
+    }
+  ]
+}

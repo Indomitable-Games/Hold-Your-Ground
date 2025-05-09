@@ -8,6 +8,11 @@ namespace Assets.Scripts
     {
         [JsonProperty("factions")]
         public List<FactionDataModel> TabList { get; set; }
+
+        public FactionList(List<FactionDataModel> tabList)
+        {
+            TabList = tabList;
+        }
     }
 
     public class FactionDataModel
@@ -23,6 +28,14 @@ namespace Assets.Scripts
 
         [JsonProperty("icon")]
         public string Icon { get; set; }
+
+        public FactionDataModel(string name, string description, List<ResearchDataModel> researchList, string icon)
+        {
+            Name = name;
+            Description = description;
+            ResearchList = researchList;
+            Icon = icon;
+        }
     }
 
     public class ResearchDataModel
@@ -41,5 +54,14 @@ namespace Assets.Scripts
 
         [JsonProperty("children")]
         public List<string> Child { get; set; }
+
+        public ResearchDataModel(string name, string description, Dictionary<string, int> costs, List<string> prarent, List<string> child)
+        {
+            Name = name;
+            Description = description;
+            Costs = costs;
+            Prarent = prarent;
+            Child = child;
+        }
     }
 }

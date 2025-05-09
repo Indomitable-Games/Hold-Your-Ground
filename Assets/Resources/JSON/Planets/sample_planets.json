@@ -1,0 +1,49 @@
+{
+  "planets": [
+    {
+      "tiles": [
+        {
+          "resourceName": "Stone",
+          "spawnChance": 1.0,
+          "isBase": true
+        },
+        {
+          "resourceName": "Iron",
+          "spawnChance": 0.5,
+          "isBase": false
+        },
+        {
+          "resourceName": "Gold",
+          "spawnChance": 0.3,
+          "isBase": false
+        },
+        {
+          "resourceName": "Copper",
+          "spawnChance": 0.2,
+          "isBase": false
+        }
+      ],
+      "seed": 42,
+      "veinHeight": 0.65,
+      "rockVariantNames": null,
+      "battleDepths": [
+        -10000,
+        -20000,
+        -30000
+      ],
+      "frequency": 0.015,
+      "noiseType": 0,
+      "fractalType": 1,
+      "octaves": 5,
+      "lacunarity": 2.0,
+      "gain": 0.5,
+      "weightedStrength": 0.8,
+      "pingPongStrength": 1.5,
+      "cellularDistanceFunction": 0,
+      "cellularReturnType": 0,
+      "cellularJitterModifier": 0.45,
+      "domainWarpType": 0,
+      "domainWarpAmp": 20.0
+    }
+  ]
+}

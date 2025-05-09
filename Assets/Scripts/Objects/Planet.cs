@@ -44,130 +44,135 @@ namespace Assets.Scripts.Objects
                 veinTypeNoiseGen.SetSeed(value+VEIN_OFFSET);
             }
         }
-
-        public List<Resource> rockVariants { get; }
-        public List<Ore> ores { get; }
+        public Resource BaseRock {get;}
+        public List<Ore> Resources { get; }
         public List<int> BattleDepths { get; }
         public Planet(PlanetConfigDataModel planet)
         {
             veinLocationNoiseGen = new FastNoiseLite();
-            veinLocationNoiseGen.SetFrequency(planet.frequency);
-            veinLocationNoiseGen.SetNoiseType(planet.noiseType);
-            veinLocationNoiseGen.SetFractalType(planet.fractalType);
-            veinLocationNoiseGen.SetFractalOctaves(planet.octaves);
-            veinLocationNoiseGen.SetFractalLacunarity(planet.lacunarity);
-            veinLocationNoiseGen.SetFractalGain(planet.gain);
-            veinLocationNoiseGen.SetFractalWeightedStrength(planet.weightedStrength);
-            veinLocationNoiseGen.SetFractalPingPongStrength(planet.pingPongStrength);
-            veinLocationNoiseGen.SetCellularDistanceFunction(planet.cellularDistanceFunction);
-            veinLocationNoiseGen.SetCellularReturnType(planet.cellularReturnType);
-            veinLocationNoiseGen.SetCellularJitter(planet.cellularJitterModifier);
-            veinLocationNoiseGen.SetDomainWarpType(planet.domainWarpType);
-            veinLocationNoiseGen.SetDomainWarpAmp(planet.domainWarpAmp);
+            veinLocationNoiseGen.SetFrequency(planet.Frequency);
+            veinLocationNoiseGen.SetNoiseType(planet.NoiseType);
+            veinLocationNoiseGen.SetFractalType(planet.FractalType);
+            veinLocationNoiseGen.SetFractalOctaves(planet.Octaves);
+            veinLocationNoiseGen.SetFractalLacunarity(planet.Lacunarity);
+            veinLocationNoiseGen.SetFractalGain(planet.Gain);
+            veinLocationNoiseGen.SetFractalWeightedStrength(planet.WeightedStrength);
+            veinLocationNoiseGen.SetFractalPingPongStrength(planet.PingPongStrength);
+            veinLocationNoiseGen.SetCellularDistanceFunction(planet.CellularDistanceFunction);
+            veinLocationNoiseGen.SetCellularReturnType(planet.CellularReturnType);
+            veinLocationNoiseGen.SetCellularJitter(planet.CellularJitterModifier);
+            veinLocationNoiseGen.SetDomainWarpType(planet.DomainWarpType);
+            veinLocationNoiseGen.SetDomainWarpAmp(planet.DomainWarpAmp);
 
             veinTypeNoiseGen = new FastNoiseLite();
-            veinTypeNoiseGen.SetFrequency(planet.frequency * .5f);
-            veinTypeNoiseGen.SetNoiseType(planet.noiseType);
-            veinTypeNoiseGen.SetFractalType(planet.fractalType);
-            veinTypeNoiseGen.SetFractalOctaves(planet.octaves);
-            veinTypeNoiseGen.SetFractalLacunarity(planet.lacunarity);
-            veinTypeNoiseGen.SetFractalGain(planet.gain);
-            veinTypeNoiseGen.SetFractalWeightedStrength(planet.weightedStrength);
-            veinTypeNoiseGen.SetFractalPingPongStrength(planet.pingPongStrength);
-            veinTypeNoiseGen.SetCellularDistanceFunction(planet.cellularDistanceFunction);
-            veinTypeNoiseGen.SetCellularReturnType(planet.cellularReturnType);
-            veinTypeNoiseGen.SetCellularJitter(planet.cellularJitterModifier);
-            veinTypeNoiseGen.SetDomainWarpType(planet.domainWarpType);
-            veinTypeNoiseGen.SetDomainWarpAmp(planet.domainWarpAmp);
-            
+            veinTypeNoiseGen.SetFrequency(planet.Frequency * .5f);
+            veinTypeNoiseGen.SetNoiseType(planet.NoiseType);
+            veinTypeNoiseGen.SetFractalType(planet.FractalType);
+            veinTypeNoiseGen.SetFractalOctaves(planet.Octaves);
+            veinTypeNoiseGen.SetFractalLacunarity(planet.Lacunarity);
+            veinTypeNoiseGen.SetFractalGain(planet.Gain);
+            veinTypeNoiseGen.SetFractalWeightedStrength(planet.WeightedStrength);
+            veinTypeNoiseGen.SetFractalPingPongStrength(planet.PingPongStrength);
+            veinTypeNoiseGen.SetCellularDistanceFunction(planet.CellularDistanceFunction);
+            veinTypeNoiseGen.SetCellularReturnType(planet.CellularReturnType);
+            veinTypeNoiseGen.SetCellularJitter(planet.CellularJitterModifier);
+            veinTypeNoiseGen.SetDomainWarpType(planet.DomainWarpType);
+            veinTypeNoiseGen.SetDomainWarpAmp(planet.DomainWarpAmp);
+
 
             baseRockNoiseGen = new FastNoiseLite();
-            baseRockNoiseGen.SetFrequency(planet.frequency*7f);
-            baseRockNoiseGen.SetNoiseType(planet.noiseType);
-            baseRockNoiseGen.SetFractalType(planet.fractalType);
-            baseRockNoiseGen.SetFractalOctaves(planet.octaves);
-            baseRockNoiseGen.SetFractalLacunarity(planet.lacunarity);
-            baseRockNoiseGen.SetFractalGain(planet.gain);
-            baseRockNoiseGen.SetFractalWeightedStrength(planet.weightedStrength);
-            baseRockNoiseGen.SetFractalPingPongStrength(planet.pingPongStrength);
-            baseRockNoiseGen.SetCellularDistanceFunction(planet.cellularDistanceFunction);
-            baseRockNoiseGen.SetCellularReturnType(planet.cellularReturnType);
-            baseRockNoiseGen.SetCellularJitter(planet.cellularJitterModifier);
-            baseRockNoiseGen.SetDomainWarpType(planet.domainWarpType);
-            baseRockNoiseGen.SetDomainWarpAmp(planet.domainWarpAmp);
+            baseRockNoiseGen.SetFrequency(planet.Frequency*7f);
+            baseRockNoiseGen.SetNoiseType(planet.NoiseType);
+            baseRockNoiseGen.SetFractalType(planet.FractalType);
+            baseRockNoiseGen.SetFractalOctaves(planet.Octaves);
+            baseRockNoiseGen.SetFractalLacunarity(planet.Lacunarity);
+            baseRockNoiseGen.SetFractalGain(planet.Gain);
+            baseRockNoiseGen.SetFractalWeightedStrength(planet.WeightedStrength);
+            baseRockNoiseGen.SetFractalPingPongStrength(planet.PingPongStrength);
+            baseRockNoiseGen.SetCellularDistanceFunction(planet.CellularDistanceFunction);
+            baseRockNoiseGen.SetCellularReturnType(planet.CellularReturnType);
+            baseRockNoiseGen.SetCellularJitter(planet.CellularJitterModifier);
+            baseRockNoiseGen.SetDomainWarpType(planet.DomainWarpType);
+            baseRockNoiseGen.SetDomainWarpAmp(planet.DomainWarpAmp);
 
 
-            Seed = planet.seed;
+            Seed = planet.Seed;
 
-            veinHeight = planet.veinHeight;
+            veinHeight = planet.VeinHeight;
 
             if (veinHeight <= 0 || veinHeight >= 1)
                 throw new ArgumentException("Invalid Vein Height");
 
-            rockVariants = new List<Resource>();
-            foreach(string rocks in planet.rockVariantNames)
-                rockVariants.Add(Globals.ResourceDictionary[rocks]);
-            ores = new List<Ore>(); //TODO ADD ORES
+            BaseRock = Globals.ResourceDictionary[planet.Tiles[0].ResourceName];
 
-            foreach (OreConfig ore in planet.ores)
+            Resources = new List<Ore>(); //TODO ADD ORES
+
+            foreach (OreConfig ore in planet.Tiles.Skip(1))
             {
-                ores.Add(new Ore(Globals.ResourceDictionary[ore.resourceName], ore.spawnChance));
+                Resources.Add(new Ore(Globals.ResourceDictionary[ore.ResourceName],ore.SpawnChance));
             }
 
 
-            for (int i = 0; i < this.ores.Count; i++)
+            for (int i = 0; i < this.Resources.Count; i++)
             {
-                Ore ore = ores[i];
-                Sprite newSprite = CombineSprites(rockVariants[2].tile.sprite, ore.resource.tile.sprite);
-
-                // Make a copy of the Resource (assuming Resource is a class; clone if needed)
+                Ore ore = Resources[i];
                 var newResource = new Resource(ore.resource);
-                Tile newTile = UnityEngine.Object.Instantiate(ore.resource.tile);
-                newTile.sprite = newSprite;
-                newResource.tile = newTile;
 
+                for (int j = 0; j < Resources[i].resource.Tiles.Count; j++)
+                {
+                    Sprite newSprite = CombineSprites(BaseRock.Tiles[0].sprite, ore.resource.Tiles[j].sprite);
+
+                    // Make a copy of the Resource (assuming Resource is a class; clone if needed)
+                    Tile newTile = UnityEngine.Object.Instantiate(ore.resource.Tiles[j]);
+                    newTile.name = ore.resource.Tiles[j].name;
+                    newTile.sprite = newSprite;
+                    newResource.Tiles[j] = newTile;
+
+                }
                 // Replace the struct in the list with a modified copy
-                this.ores[i] = new Ore(newResource, ore.spawnChance);
+                Resources[i] = new Ore(newResource, ore.spawnChance);
             }
-            BattleDepths = planet.battleDepths;
+            BattleDepths = planet.BattleDepths;
         }
 
         public float GetVeinLocationNoise(Point point) => veinLocationNoiseGen.GetNoise(point.X, point.Y);
         public float GetVeinTypeNoise(Point point) => veinTypeNoiseGen.GetNoise(point.X, point.Y);
         public float GetBaseRockNoise(Point point) => baseRockNoiseGen.GetNoise(point.X, point.Y);
 
-        public Resource GetResource(Point point)
+        public Tile GetResource(Point point)
         {
             float noiseValue = (GetVeinLocationNoise(point)+1)/2;
 
+            //under vein hight, its not a resource, decide which base rock it is
             if (noiseValue < veinHeight)
             {
-                float rockNoise = (GetBaseRockNoise(point)+1)/2;
-                if(rockNoise >= .9f)
-                    return rockVariants[1]; //rock 7 .9f-1
-                else if(rockNoise >= .2f)
-                    return rockVariants[2]; //rock 14 .2f -.9f
-                return rockVariants[0]; //rock 0 0-.2f
+                float rockNoise = (GetBaseRockNoise(point) + 1) / 2;
+                //1-(1-mainchanc)/2 = .9 if mainchance = .8
+                if (rockNoise >= 1-((1-BaseRock.mainSpawnChance)/2))
+                    return BaseRock.Tiles[1]; //rock 0 .9f-1
+                else if(rockNoise < (1-BaseRock.mainSpawnChance)/2)
+                    return BaseRock.Tiles[2]; //rock 7 0-.1
+                return BaseRock.Tiles[0]; //rock 0 0-.2f
             }
 
             float totalSpawnRate = 0;
             
-            totalSpawnRate = ores.Sum(x => x.spawnChance);
+            totalSpawnRate = Resources.Sum(x => x.spawnChance);
 
             float veinNoiseValue = (GetVeinTypeNoise(point) + 1) / 2; // Normalize to 0-1
-            float weightedValue = veinNoiseValue * totalSpawnRate/2;
+            float weightedValue = veinNoiseValue * totalSpawnRate;
             float cumulative = 0;
             
-                for (int i = 0; i < ores.Count; i += 2)
+                for (int i = 0; i < Resources.Count; i++)
                 {
-                    cumulative += ores[i].spawnChance;
+                    cumulative += Resources[i].spawnChance;
                     if (weightedValue <= cumulative)
                     {
-                        return ores[i+ (int)(veinNoiseValue * 10000) % 2].resource; //return a random varaition of the ore
+                        return Resources[i].resource.Tiles[(int)(veinNoiseValue * 10000) % 2]; //return a random varaition of the ore
                     }
                 }
             
-            return ores[^1].resource; // Default to the last ore in case of rounding issues
+            return Resources[^1].resource.Tiles[0]; // Default to the last ore in case of rounding issues
         }
 
         public static Sprite CombineSprites(Sprite background, Sprite overlay)

@@ -50,7 +50,7 @@ namespace Assets.Scripts
         public static Dictionary<string, Resource> LoadAllResources()
         {
             var resouceDataList = new List<ResourceDataModel>();
-            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Resource");
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Resources");
 
             foreach (var file in jsonFiles)
             {
@@ -63,10 +63,10 @@ namespace Assets.Scripts
             {
                 //There will be a global TileName->Resource map Dict<string, string>
                 resourceDict[resourceData.Name] = new Resource(resourceData);
-                //foreach (string tile in resourceDict[resourceData.Name].TileList)
-                //{
-                //    TileResourceMap[tile] = resourceData.Name;
-                //}
+                foreach (string tile in resourceDict[resourceData.Name].TileNames)
+                {
+                    TileResourceMap[tile] = resourceData.Name;
+                }
             }
             return resourceDict;
         }
@@ -79,8 +79,8 @@ namespace Assets.Scripts
             foreach (var file in jsonFiles)
             {
                 var wrapper = JsonConvert.DeserializeObject<PlanetList>(file.text);
-                if (wrapper?.planetList != null)
-                    planetDataList.AddRange(wrapper.planetList);
+                if (wrapper?.PlanetListProperty != null)
+                    planetDataList.AddRange(wrapper.PlanetListProperty);
             }
             var planetList = new List<Planet>();
             foreach (PlanetConfigDataModel planetData in planetDataList)

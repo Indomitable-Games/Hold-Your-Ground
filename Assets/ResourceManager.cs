@@ -18,7 +18,7 @@ public class ResourceManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startPos.y -= (resourcePreFab.transform as RectTransform).rect.height * .75f;
+        /*startPos.y -= (resourcePreFab.transform as RectTransform).rect.height * .75f;
         foreach (Resource resource in Globals.Player.PlayerResources.Keys)
         {
             _resources.Add(Instantiate(resourcePreFab));
@@ -26,7 +26,7 @@ public class ResourceManager : MonoBehaviour
 
             _resources[^1].transform.localPosition = startPos;
             startPos.y -= 2.5f * (_resources[^1].transform as RectTransform).rect.height;
-            _resources[^1].GetComponentInChildren<Image>().sprite = resource.tile.sprite;
+            _resources[^1].GetComponentInChildren<Image>().sprite = resource.Tiles[0].sprite;
 
             _resources[^1].name = resource.Name;
             foreach (TextMeshProUGUI text in _resources[^1].GetComponentsInChildren<TextMeshProUGUI>())
@@ -36,12 +36,12 @@ public class ResourceManager : MonoBehaviour
                     text.text = resource.Name + ":";
                 }
             }
-        }
+        }*/
 
     }
 
     public void UpdateResource(Resource resource)
     {
-        _resources.First(x => x.name.Equals(resource.Name)).GetComponentsInChildren<TextMeshProUGUI>().First(x => x.name.Equals("Number")).text = resource.Total.ToString();
+        //_resources.First(x => x.name.Equals(resource.Name)).GetComponentsInChildren<TextMeshProUGUI>().First(x => x.name.Equals("Number")).text = resource.Total.ToString();
     }
 }

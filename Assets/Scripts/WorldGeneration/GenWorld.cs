@@ -261,7 +261,7 @@ public class GenWorld : MonoBehaviour
             {
                 int pos = y * width + x + (width / 2);
                 vector3Ints[pos] = new Vector3Int(x, -y, 0) + Vector3Int.RoundToInt(this.transform.position);
-                tileArr[pos] = Globals.PlanetList[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x,vector3Ints[pos].y)).tile;
+                tileArr[pos] = Globals.PlanetList[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x,vector3Ints[pos].y));
             }
 
         world.SetTiles(vector3Ints, tileArr);

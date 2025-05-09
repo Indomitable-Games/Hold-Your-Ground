@@ -10,48 +10,25 @@ public static class FactionJsonGenerator
     [MenuItem("Tools/Generate Sample Faction JSON")]
     public static void GenerateSampleJson()
     {
-        var factionList = new FactionList
+        var factionList = new FactionList(new List<FactionDataModel>
         {
-            TabList = new List<FactionDataModel>
-            {
-                new FactionDataModel
+            new(
+                "Dwarves",
+                "Stout miners of the deep.",
+                new List<ResearchDataModel>
                 {
-                    Name = "Dwarves",
-                    Description = "Stout miners of the deep.",
-                    Icon = "icon_dwarf.png",
-                    ResearchList = new List<ResearchDataModel>
-                    {
-                        new ResearchDataModel
-                        {
-                            Name = "Deep Mining",
-                            Description = "Unlock advanced mining tech.",
-                            Costs = new Dictionary<string, int>
-                            {
-                                { "Iron", 100 },
-                                { "Gold", 50 }
-                            },
-                            Prarent = new List<string>(), // no parents
-                            Child = new List<string> { "Explosive Mining" }
-                        },
-                        new ResearchDataModel
-                        {
-                            Name = "Explosive Mining",
-                            Description = "Use controlled blasts to mine faster.",
-                            Costs = new Dictionary<string, int>
-                            {
-                                { "Iron", 150 },
-                                { "Gunpowder", 75 }
-                            },
-                            Prarent = new List<string> { "Deep Mining" },
-                            Child = new List<string>()
-                        }
-                    }
-                }
-            }
-        };
+                    new("Deep Mining", "Unlock advanced mining tech.",
+                        new Dictionary<string, int> { { "Iron", 100 }, { "Gold", 50 } },
+                        new List<string>(), new List<string> { "Explosive Mining" }),
+                    new("Explosive Mining", "Use controlled blasts to mine faster.",
+                        new Dictionary<string, int> { { "Iron", 150 }, { "Gunpowder", 75 } },
+                        new List<string> { "Deep Mining" }, new List<string>())
+                },
+                "icon_dwarf.png"
+            )
+        });
 
         string json = JsonConvert.SerializeObject(factionList, Formatting.Indented);
-
         string outputPath = "Assets/Resources/JSON/Factions/sample_factions.json";
         Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
         File.WriteAllText(outputPath, json);
