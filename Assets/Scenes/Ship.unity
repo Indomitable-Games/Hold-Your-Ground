@@ -4425,7 +4425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thickness: 24.48
   lineColor: {r: 0.86415094, g: 0.024456954, b: 0.024456954, a: 1}
-  shop: 0
+  shop: 1
 --- !u!156049354 &1373628507
 Grid:
   m_ObjectHideFlags: 0
@@ -6221,7 +6221,7 @@ MonoBehaviour:
   bobSpeed: 1
   bobHeight: 10
   maxOffset: 20
-  shop: {fileID: 65183096}
+  DropShipInvetory: {fileID: 65183096}
 --- !u!114 &2061276769
 MonoBehaviour:
   m_ObjectHideFlags: 0

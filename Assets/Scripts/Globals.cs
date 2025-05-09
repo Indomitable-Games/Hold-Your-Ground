@@ -10,6 +10,7 @@ using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts
 {
+    
     internal static class Globals
     {
         #region PlayerStats
@@ -35,11 +36,17 @@ namespace Assets.Scripts
 
         public static Dictionary<string, Resource> ResourceDictionary;
         public static List<Planet> PlanetList;
-        public static List<ShopTab> ShopTabList;
-        public static List<Item> ItemList;
+        public static List<FactionDataModel> ShopTabList;
+        public static List<ItemDataModel> ItemList;
+
+        private static bool loaded = false;
 
         public static void LoadEverything()
         {
+            if (loaded)
+                return;
+            loaded = true;
+
             ResourceDictionary = LoadAllResources();
             PlanetList = LoadAllPlanets();
             ShopTabList = LoadAllShopTabs();
@@ -84,14 +91,14 @@ namespace Assets.Scripts
             return planetList;
         }
 
-        public static List<ShopTab> LoadAllShopTabs()
+        public static List<FactionDataModel> LoadAllShopTabs()
         {
-            var itemList = new List<ShopTab>();
+            var itemList = new List<FactionDataModel>();
             var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Items");
 
             foreach (var file in jsonFiles)
             {
-                var wrapper = JsonConvert.DeserializeObject<ShopTabList>(file.text);
+                var wrapper = JsonConvert.DeserializeObject<FactionList>(file.text);
                 if (wrapper?.TabList != null)
                     itemList.AddRange(wrapper.TabList);
             }
@@ -99,9 +106,9 @@ namespace Assets.Scripts
             return itemList;
         }
 
-        public static List<Item> LoadAllItems()
+        public static List<ItemDataModel> LoadAllItems()
         {
-            var itemList = new List<Item>();
+            var itemList = new List<ItemDataModel>();
             var jsonFiles = Resources.LoadAll<TextAsset>("JSON/ShopTabs");
 
             foreach (var file in jsonFiles)

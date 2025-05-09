@@ -5,24 +5,17 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public enum Faction
-    {
-        Base,
-        Dwarves,
-        Elves,
-        Forerunner
-    }
 
     public class ItemList
     {
         [JsonProperty("Items")]
-        public List<Item> Items { get; set; }
+        public List<ItemDataModel> Items { get; set; }
     }
 
-    public class Item
+    public class ItemDataModel
     {
         [JsonProperty("Id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty("Name")]
         public string Name { get; set; }
@@ -37,9 +30,21 @@ namespace Assets.Scripts
         public Vector2Int Size { get; set; }
 
         [JsonProperty("Faction")]
-        public Faction Faction { get; set; }
+        public string Faction { get; set; }
 
-        [JsonProperty("Unlocked")]
-        public bool Unlocked { get; set; }
+        [JsonProperty("Research")]
+        public string Research { get; set; }
+
+        /*
+         * Activatable
+         * range
+         * uses
+         * persistant (stays after mission)
+         * deployable (crew members)
+         * requires crew member (turrets that need to be build)
+         * has ammo (drill launcher)
+         * is ammo
+         * ammo count
+         */
     }
 }

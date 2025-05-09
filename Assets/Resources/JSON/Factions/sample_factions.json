@@ -1,0 +1,35 @@
+{
+  "factions": [
+    {
+      "name": "Dwarves",
+      "description": "Stout miners of the deep.",
+      "research": [
+        {
+          "name": "Deep Mining",
+          "description": "Unlock advanced mining tech.",
+          "costs": {
+            "Iron": 100,
+            "Gold": 50
+          },
+          "parents": [],
+          "children": [
+            "Explosive Mining"
+          ]
+        },
+        {
+          "name": "Explosive Mining",
+          "description": "Use controlled blasts to mine faster.",
+          "costs": {
+            "Iron": 150,
+            "Gunpowder": 75
+          },
+          "parents": [
+            "Deep Mining"
+          ],
+          "children": []
+        }
+      ],
+      "icon": "icon_dwarf.png"
+    }
+  ]
+}
