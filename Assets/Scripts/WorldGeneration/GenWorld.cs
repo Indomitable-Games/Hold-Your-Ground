@@ -226,7 +226,7 @@ public class GenWorld : MonoBehaviour
             GenChunk(new Vector3(player.transform.position.x, this.transform.position.y - mapChunkSize));
         if (playerPos.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() -10)
             LoadBattle();
-
+         
 
     }
 
