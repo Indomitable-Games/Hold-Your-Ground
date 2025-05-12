@@ -62,9 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Editor\PlanetJsonGenerator.cs" />
+    <Compile Include="Assets\Scripts\Editor\GenerateAllJsons.cs" />
     <Compile Include="Assets\Scripts\Editor\ResourceJsonGenerator.cs" />
     <Compile Include="Assets\Scripts\Editor\FactionJsonGenerator.cs" />
     <Compile Include="Assets\Scripts\Editor\MapGeneratorEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\ItemJsonGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -34,8 +34,8 @@ namespace Assets.Scripts.Objects
         [JsonProperty("rockVariantNames")]
         public List<string> RockVariantNames { get; set; }
 
-        [JsonProperty("battleDepths")]
-        public List<int> BattleDepths { get; set; }
+        [JsonProperty("battleConfigInfos")]
+        public List<BattleConfigDataModel> BattleConfigInfo { get; set; }
 
         [JsonProperty("frequency")]
         public float Frequency { get; set; }
@@ -81,7 +81,7 @@ namespace Assets.Scripts.Objects
             List<OreConfig> tiles,
             int seed,
             float veinHeight,
-            List<int> battleDepths,
+            List<BattleConfigDataModel> battleConfigInfo,
             float frequency,
             FastNoiseLite.NoiseType noiseType,
             FastNoiseLite.FractalType fractalType,
@@ -99,7 +99,7 @@ namespace Assets.Scripts.Objects
             Tiles = tiles;
             Seed = seed;
             VeinHeight = veinHeight;
-            BattleDepths = battleDepths;
+            BattleConfigInfo = battleConfigInfo;
             Frequency = frequency;
             NoiseType = noiseType;
             FractalType = fractalType;
@@ -113,6 +113,18 @@ namespace Assets.Scripts.Objects
             CellularJitterModifier = cellularJitterModifier;
             DomainWarpType = domainWarpType;
             DomainWarpAmp = domainWarpAmp;
+        }
+    }
+    [Serializable]
+    public class BattleConfigDataModel
+    {
+        [JsonProperty("depth")]
+        public int Depth { get; set; }
+        //public list enemy
+
+        public BattleConfigDataModel(int depth)
+        {
+            Depth = depth;
         }
     }
 

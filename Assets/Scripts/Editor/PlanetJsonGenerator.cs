@@ -24,7 +24,12 @@ public static class PlanetJsonGenerator
                     },
                     42,
                     0.65f,
-                    new List<int> { -10000, -20000, -30000 },
+                    new List<BattleConfigDataModel> 
+                    { 
+                        new BattleConfigDataModel(-10000), 
+                        new BattleConfigDataModel(-20000), 
+                        new BattleConfigDataModel(-30000) 
+                    },
                     0.015f,
                     FastNoiseLite.NoiseType.OpenSimplex2,
                     FastNoiseLite.FractalType.FBm,

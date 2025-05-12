@@ -1,0 +1,55 @@
+{
+  "Items": [
+    {
+      "Id": "stone_drill",
+      "Name": "Stone Drill",
+      "Description": "Basic mining drill for extracting ores.",
+      "Costs": {
+        "Stone": 20,
+        "Iron": 10
+      },
+      "Size": {
+        "x": 2,
+        "y": 2,
+        "magnitude": 2.828427,
+        "sqrMagnitude": 8
+      },
+      "Faction": "Engineer",
+      "Research": "drill_tech_1"
+    },
+    {
+      "Id": "coal_generator",
+      "Name": "Coal Generator",
+      "Description": "Generates electricity from coal.",
+      "Costs": {
+        "Coal": 15,
+        "Iron": 25
+      },
+      "Size": {
+        "x": 3,
+        "y": 2,
+        "magnitude": 3.60555124,
+        "sqrMagnitude": 13
+      },
+      "Faction": "Engineer",
+      "Research": "power_tech_1"
+    },
+    {
+      "Id": "barracks",
+      "Name": "Barracks",
+      "Description": "Trains and houses troops.",
+      "Costs": {
+        "Stone": 30,
+        "Wood": 20
+      },
+      "Size": {
+        "x": 4,
+        "y": 3,
+        "magnitude": 5.0,
+        "sqrMagnitude": 25
+      },
+      "Faction": "Military",
+      "Research": "barracks_tech"
+    }
+  ]
+}

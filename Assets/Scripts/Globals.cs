@@ -108,7 +108,7 @@ namespace Assets.Scripts
         public static List<ItemDataModel> LoadAllItems()
         {
             var itemList = new List<ItemDataModel>();
-            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/ShopTabs");
+            var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Items");
 
             foreach (var file in jsonFiles)
             {

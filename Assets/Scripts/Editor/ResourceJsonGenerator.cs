@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 public static class ResourceJsonGenerator
 {
     [MenuItem("Tools/Generate Sample Resource JSON")]
-    public static void GenerateSampleJson()
+    public static void GenerateSampleResourceJson()
     {
         var resources = new List<ResourceDataModel>
         {

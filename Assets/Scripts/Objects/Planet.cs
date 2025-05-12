@@ -46,9 +46,11 @@ namespace Assets.Scripts.Objects
         }
         public Resource BaseRock {get;}
         public List<Ore> Resources { get; }
-        public List<int> BattleDepths { get; }
+        public List<BattleConfigDataModel> battles { get; }
+        public int battleIndex { get; }
         public Planet(PlanetConfigDataModel planet)
         {
+            #region NoiseGenerators init
             veinLocationNoiseGen = new FastNoiseLite();
             veinLocationNoiseGen.SetFrequency(planet.Frequency);
             veinLocationNoiseGen.SetNoiseType(planet.NoiseType);
@@ -94,7 +96,7 @@ namespace Assets.Scripts.Objects
             baseRockNoiseGen.SetCellularJitter(planet.CellularJitterModifier);
             baseRockNoiseGen.SetDomainWarpType(planet.DomainWarpType);
             baseRockNoiseGen.SetDomainWarpAmp(planet.DomainWarpAmp);
-
+            #endregion
 
             Seed = planet.Seed;
 
@@ -103,16 +105,13 @@ namespace Assets.Scripts.Objects
             if (veinHeight <= 0 || veinHeight >= 1)
                 throw new ArgumentException("Invalid Vein Height");
 
+            #region tileInfo
             BaseRock = Globals.ResourceDictionary[planet.Tiles[0].ResourceName];
-
             Resources = new List<Ore>(); //TODO ADD ORES
 
             foreach (OreConfig ore in planet.Tiles.Skip(1))
-            {
                 Resources.Add(new Ore(Globals.ResourceDictionary[ore.ResourceName],ore.SpawnChance));
-            }
-
-
+            
             for (int i = 0; i < this.Resources.Count; i++)
             {
                 Ore ore = Resources[i];
@@ -132,13 +131,15 @@ namespace Assets.Scripts.Objects
                 // Replace the struct in the list with a modified copy
                 Resources[i] = new Ore(newResource, ore.spawnChance);
             }
-            BattleDepths = planet.BattleDepths;
+            #endregion
+
+            battles = planet.BattleConfigInfo;
         }
 
         public float GetVeinLocationNoise(Point point) => veinLocationNoiseGen.GetNoise(point.X, point.Y);
         public float GetVeinTypeNoise(Point point) => veinTypeNoiseGen.GetNoise(point.X, point.Y);
         public float GetBaseRockNoise(Point point) => baseRockNoiseGen.GetNoise(point.X, point.Y);
-
+        public int GetBattleDepth() => battles[battleIndex].Depth;
         public Tile GetResource(Point point)
         {
             float noiseValue = (GetVeinLocationNoise(point)+1)/2;

@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 public static class FactionJsonGenerator
 {
     [MenuItem("Tools/Generate Sample Faction JSON")]
-    public static void GenerateSampleJson()
+    public static void GenerateSampleFactionJson()
     {
         var factionList = new FactionList(new List<FactionDataModel>
         {

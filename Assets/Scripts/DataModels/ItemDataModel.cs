@@ -1,15 +1,20 @@
 ﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
+
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-
     public class ItemList
     {
         [JsonProperty("Items")]
         public List<ItemDataModel> Items { get; set; }
+
+        public ItemList(List<ItemDataModel> items)
+        {
+            Items = items;
+        }
     }
 
     public class ItemDataModel
@@ -35,16 +40,23 @@ namespace Assets.Scripts
         [JsonProperty("Research")]
         public string Research { get; set; }
 
-        /*
-         * Activatable
-         * range
-         * uses
-         * persistant (stays after mission)
-         * deployable (crew members)
-         * requires crew member (turrets that need to be build)
-         * has ammo (drill launcher)
-         * is ammo
-         * ammo count
-         */
+        public ItemDataModel(
+            string id,
+            string name,
+            string description,
+            Dictionary<string, int> costs,
+            Vector2Int size,
+            string faction,
+            string research
+        )
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Costs = costs;
+            Size = size;
+            Faction = faction;
+            Research = research;
+        }
     }
 }
