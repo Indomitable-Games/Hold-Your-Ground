@@ -131,7 +131,6 @@ public class PlayerController : MonoBehaviour
                         {
                             int currentAmount = Globals.Player.PlayerResources.GetValueOrDefault(resource, 0);
                             Globals.Player.PlayerResources[resource] = currentAmount + 1;
-                            Debug.Log($"{resource.Name}: {Globals.Player.PlayerResources[resource]}");
 
                         }
                     }
@@ -141,11 +140,6 @@ public class PlayerController : MonoBehaviour
                     tileCount++;
                 }
             }
-        }
-
-        if (tileCount > 0)
-        {
-            Debug.Log($"Collected {tileCount} tiles");
         }
     }
 
