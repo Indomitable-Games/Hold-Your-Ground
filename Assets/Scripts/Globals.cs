@@ -23,14 +23,13 @@ namespace Assets.Scripts
         public static int lastChunks = 3;
 
         public static int planetID = 0;
-        public static int currentBattle = 0;
         #endregion
 
         public static Dictionary<string, string> TileResourceMap = new Dictionary<string, string>();
         public static Dictionary<string, Resource> ResourceDictionary;
         public static List<Planet> PlanetList;
-        public static List<FactionDataModel> ShopTabList;
-        public static List<ItemDataModel> ItemList;
+        public static List<Faction> FactionList;
+        public static List<Item> ItemList;
 
         private static bool loaded = false;
 
@@ -42,7 +41,7 @@ namespace Assets.Scripts
 
             ResourceDictionary = LoadAllResources();
             PlanetList = LoadAllPlanets();
-            ShopTabList = LoadAllShopTabs();
+            FactionList = LoadAllFactions();
             ItemList = LoadAllItems();
 
             Debug.Log("everytingLoaded");
@@ -90,32 +89,39 @@ namespace Assets.Scripts
             return planetList;
         }
 
-        public static List<FactionDataModel> LoadAllShopTabs()
+        public static List<Faction> LoadAllFactions()
         {
-            var itemList = new List<FactionDataModel>();
+            var factionDataList = new List<FactionDataModel>();
             var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Items");
 
             foreach (var file in jsonFiles)
             {
                 var wrapper = JsonConvert.DeserializeObject<FactionList>(file.text);
                 if (wrapper?.TabList != null)
-                    itemList.AddRange(wrapper.TabList);
+                    factionDataList.AddRange(wrapper.TabList);
             }
 
-            return itemList;
+            var factionList = new List<Faction>();
+            foreach(FactionDataModel factionData in factionDataList)
+                factionList.Add(new Faction(factionData));
+
+            return factionList;
         }
 
-        public static List<ItemDataModel> LoadAllItems()
+        public static List<Item> LoadAllItems()
         {
-            var itemList = new List<ItemDataModel>();
+            var itemDataList = new List<ItemDataModel>();
             var jsonFiles = Resources.LoadAll<TextAsset>("JSON/Items");
 
             foreach (var file in jsonFiles)
             {
                 var wrapper = JsonConvert.DeserializeObject<ItemList>(file.text);
                 if (wrapper?.Items != null)
-                    itemList.AddRange(wrapper.Items);
+                    itemDataList.AddRange(wrapper.Items);
             }
+            var itemList = new List<Item>();
+            foreach (ItemDataModel itemData in itemDataList)
+                itemList.Add(new Item(itemData));
 
             return itemList;
         }

@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using Assets.Scripts.Objects;
 
 using NUnit.Framework;
 
@@ -21,6 +22,7 @@ public class ShipManager : MonoBehaviour
     private float timeOffset;
 
     public GameObject DropShipInvetory;
+    private int shopFactionIndex;
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class ShipManager : MonoBehaviour
         startPos = rectTransform.anchoredPosition;
         GenerateNewBobHeight();
         timeOffset = Random.Range(0f, Mathf.PI * 2f); // Randomize start phase
+        shopFactionIndex = 0;
     }
 
     void Update()
@@ -65,7 +68,7 @@ public class ShipManager : MonoBehaviour
 
         int name = 1;
 
-        /*foreach (Vector2Int[] item in Globals.shop[Globals.shopIndex]) //for each intem in shop at shopindex
+        foreach (Item item in Globals.ItemList.Where(x => x.Name == Globals.FactionList[name].Name) ) //for each intem in shop at shopindex
         {
             GameObject i = new GameObject($"test {name}"); //make a gameobject for item
             i.AddComponent<Image>(); //give it an image object (set to sprite, if preab wont need to do this)
@@ -73,15 +76,15 @@ public class ShipManager : MonoBehaviour
 
             DraggableItem d = i.AddComponent<DraggableItem>();
 
-            d.Init(item[0], Color.blue, item[1]);
+            /*d.Init(item, Color.blue, item);
 
             var check = shop.TryAddItem(d, item[1]);
             if (check == null || check != item[1])
                 Debug.LogError("didnt place item at correct spot in shop");
             
-            d.Init(item[0], Color.blue, item[1]);
+            d.Init(item[0], Color.blue, item[1]);*/
 
-        }*/
+        }
 
 
         this.DropShipInvetory.SetActive(true);

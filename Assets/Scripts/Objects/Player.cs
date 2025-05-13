@@ -11,8 +11,8 @@ namespace Assets.Scripts.Objects
     public class Player
     {
         public float Speed = 10f;
-        public float TurnRadius = 30f;
-        public float TurnSpeed = .4f;
+        public float TurnRadius = 75f;
+        public float TurnSpeed = .8f;
 
         public int Fuel = 5000;
 
