@@ -2,13 +2,15 @@ using Assets.Scripts;
 
 using System;
 using System.Collections.Generic;
-
-
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 using static FastNoiseLite;
+using static UnityEngine.UI.Image;
 
 public class GenWorld : MonoBehaviour
 {
@@ -64,7 +66,8 @@ public class GenWorld : MonoBehaviour
     public Tilemap world;
 
     private GameObject player;
-    public int playerGenDistance = 50;
+    private int playerGenDistance = 20; //TODO Make orthographic view
+    private int chunkSize;
 
     public bool autoUpdate;
     public bool ChunkGen;
@@ -78,8 +81,22 @@ public class GenWorld : MonoBehaviour
         {
             Debug.LogError("Player not found! Make sure the Player GameObject has the correct tag.");
         }
+        
+        int width = 15 * playerGenDistance; //TODO: Orthographic Size
+        width += width % 6;
+        chunkSize = width / 3;
+
         world.ClearAllTiles();
-        GenChunk(Vector3.zero);
+        Vector2Int[] chunkOffsets = new Vector2Int[]
+        {
+            Vector2Int.zero,
+            Vector2Int.down,
+            Vector2Int.left,
+            Vector2Int.right,
+            Vector2Int.down + Vector2Int.left,
+            Vector2Int.down + Vector2Int.right
+        };
+        GenChunkHandler(player.transform.position, chunkOffsets);
     }
 
 
@@ -88,8 +105,7 @@ public class GenWorld : MonoBehaviour
     public void DrawMapInEditor()
     {
         int width = (int)(2 * (mapChunkSize + playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.Player.TurnRadius * Mathf.Deg2Rad))) + 4 * playerGenDistance;
-        if (width % 2 == 1)
-            width++;
+        width += width % 2;
         MapData mapData = GenerateMapData(xOffset, yOffset, width, mapChunkSize);
 
         if (drawMode == DrawMode.NoiseMap)
@@ -120,10 +136,6 @@ public class GenWorld : MonoBehaviour
             last.Enqueue(vector3Ints);
         }
     }
-
-
-
-
 
     MapData GenerateMapData(int xOffset, int yOffset, int width, int height)
     {
@@ -178,7 +190,6 @@ public class GenWorld : MonoBehaviour
         return new MapData(noiseMap, colorMap, tileArr);
     }
 
-
     public static float[,] GenerateNoiseMapFromFast(int xOffset, int yOffset, int width, int height, int seed, float frequency, FastNoiseLite.NoiseType noiseType, FastNoiseLite.FractalType fractalType, int octaves, float lacunarity, float gain, float weightedStrength, float pingPongStrength, FastNoiseLite.CellularDistanceFunction cellularDistanceFunction, FastNoiseLite.CellularReturnType cellularReturnType, float cellularJitter, FastNoiseLite.DomainWarpType domainWarpType, float domainWarpAmp)
     {
         float[,] noiseMapReturn = new float[width, height];
@@ -219,15 +230,33 @@ public class GenWorld : MonoBehaviour
 
     void Update()
     {
-        if (!ChunkGen)
-        { return; }
-        Vector3 playerPos = player.transform.position;
-        if (playerPos.y < this.gameObject.transform.position.y - mapChunkSize + playerGenDistance)
-            GenChunk(new Vector3(player.transform.position.x, this.transform.position.y - mapChunkSize));
-        if (playerPos.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() -10)
-            LoadBattle();
-         
+        if (!ChunkGen) return;
 
+        Vector3 playerPos = player.transform.position;
+        Vector3 origin = transform.position;
+
+        int playerChunkX = Mathf.FloorToInt(playerPos.x / chunkSize);
+        int playerChunkY = Mathf.FloorToInt(playerPos.y / chunkSize);
+        int currentChunkX = Mathf.FloorToInt(origin.x / chunkSize);
+        int currentChunkY = Mathf.FloorToInt(origin.y / chunkSize);
+
+        // Only update when player enters a new chunk
+        if (playerChunkX != currentChunkX || playerChunkY != currentChunkY)
+        {
+            Vector3 newOrigin = new Vector3(playerChunkX * chunkSize, playerChunkY * chunkSize, 0);
+            transform.position = newOrigin;
+            Debug.Log($"Moved origin to {newOrigin}");
+
+            // Distances to nearby chunks (in chunk units)
+            int distDown = Mathf.Abs(playerChunkY - (currentChunkY - 1));
+            int distLeft = Mathf.Abs(playerChunkX - (currentChunkX - 1));
+            int distRight = Mathf.Abs(playerChunkX - (currentChunkX + 1));
+
+            GenChunkHandler(newOrigin, GetChunkOffsets(distDown, distLeft, distRight));
+        }
+
+        if (playerPos.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() - 10)
+            LoadBattle();
     }
 
     private void LoadBattle()
@@ -240,11 +269,15 @@ public class GenWorld : MonoBehaviour
     public void GenChunk(Vector3 origin)
     {
         if (last.Count > Globals.lastChunks)
-            foreach (Vector3Int p in last.Dequeue())
-                world.SetTile(p, null);
+        {
+            Vector3Int[] positionsToRemove = last.Dequeue();
+            world.SetTiles(positionsToRemove, new TileBase[positionsToRemove.Length]);
+        }
+
         if (origin.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() -10)
             return;
-        int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Assets.Scripts.Globals.Player.TurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
+
+        int width = (int)(2 * (mapChunkSize+playerGenDistance) * (Mathf.Tan(Globals.Player.TurnRadius * Mathf.Deg2Rad))) + 4*playerGenDistance;
         if (width % 2 == 1)
             width++;
         
@@ -267,4 +300,199 @@ public class GenWorld : MonoBehaviour
         world.SetTiles(vector3Ints, tileArr);
         last.Enqueue(vector3Ints);
     }
+
+    public void GenChunksAroundPlayer(Vector3 playerPosition)
+    {
+        // Calculate player's chunk position (center chunk)
+        int playerChunkX = Mathf.FloorToInt(playerPosition.x / chunkSize) - chunkSize / 2;
+        int playerChunkY = Mathf.FloorToInt(playerPosition.y / chunkSize) + chunkSize;
+
+        // Debug player position and chunk calculation
+        Debug.Log($"Player position: {playerPosition}, Chunk coords: ({playerChunkX}, {playerChunkY})");
+
+        // Define the 5 chunks we want to generate (half-circle below and to the sides)
+        Vector2Int[] relativeChunkPositions = new Vector2Int[]
+        {
+        new Vector2Int(-1, 0),   // West
+        new Vector2Int(-1, -1),  // Southwest
+        new Vector2Int(0, -1),   // South
+        new Vector2Int(1, -1),   // Southeast
+        new Vector2Int(1, 0)     // East
+        };
+
+        // Generate each chunk
+        foreach (Vector2Int relPos in relativeChunkPositions)
+        {
+            // Calculate absolute chunk position
+            int chunkX = playerChunkX + relPos.x;
+            int chunkY = playerChunkY + relPos.y;
+
+            // Calculate world position for chunk origin
+            Vector3 chunkOrigin = new Vector3(
+                chunkX * chunkSize,
+                chunkY * chunkSize,
+                0
+            );
+
+            // Debug the chunk position we're checking
+            Debug.Log($"Checking chunk at ({chunkX}, {chunkY}), world pos: {chunkOrigin}");
+
+            // Check if the chunk already exists by looking at its center position
+            Vector3Int tilePosToCheck = new Vector3Int(
+                (int)chunkOrigin.x + chunkSize / 2,
+                (int)chunkOrigin.y - chunkSize / 2,
+                0
+            );
+
+            // If the tile at this position is null, we need to generate the chunk
+            if (world.GetTile(tilePosToCheck) == null)
+            {
+                Debug.Log($"Generating chunk at ({chunkX}, {chunkY})");
+                GenSingleChunk(chunkOrigin);
+            }
+            else
+            {
+                Debug.Log($"Chunk at ({chunkX}, {chunkY}) already exists");
+            }
+        }
+    }
+
+    // Generate a single square chunk at the specified origin TODO: Make Async also make assigning resource to tile Async
+    public void GenSingleChunk(Vector3 origin)
+    {
+        // Memory management - remove old chunks if needed
+        if (last.Count > Globals.lastChunks)
+        {
+            Vector3Int[] positionsToRemove = last.Dequeue();
+            world.SetTiles(positionsToRemove, new TileBase[positionsToRemove.Length]);
+        }
+
+        // Skip if below the battle depth
+        if (origin.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() - 10)
+            return;
+
+        // Create tile arrays for this chunk
+        Vector3Int[] vector3Ints = new Vector3Int[chunkSize * chunkSize];
+        TileBase[] tileArr = new TileBase[chunkSize * chunkSize];
+
+        // Fill the tile arrays
+        for (int y = 0; y < chunkSize; y++)
+        {
+            for (int x = 0; x < chunkSize; x++)
+            {
+                int index = y * chunkSize + x;
+
+                // Calculate the world position for this tile
+                vector3Ints[index] = new Vector3Int(
+                    (int)origin.x + x,
+                    (int)origin.y - y,
+                    0
+                );
+
+                // Get resource tile
+                tileArr[index] = Globals.PlanetList[Globals.planetID].GetResource(
+                    new System.Drawing.Point(vector3Ints[index].x, vector3Ints[index].y));
+            }
+        }
+
+        // Set tiles in the world
+        world.SetTiles(vector3Ints, tileArr);
+
+        // Add to tracking for memory management
+        last.Enqueue(vector3Ints);
+
+        // Debug confirmation
+        Debug.Log($"Generated chunk at {origin} with size {chunkSize}x{chunkSize}");
+    }
+
+    private Vector2Int[] GetChunkOffsets(int distDown, int distLeft, int distRight)
+    {
+        List<Vector2Int> offsets = new List<Vector2Int>();
+        int smallDist = Math.Min(Math.Min(distDown, distLeft), distRight);
+        offsets.Add(Vector2Int.down);
+        if (smallDist == distDown)
+        {
+            offsets.Add(Vector2Int.down + Vector2Int.right);
+            offsets.Add(Vector2Int.down + Vector2Int.left);
+        }
+        else if (smallDist == distLeft)
+        {
+            offsets.Add(Vector2Int.left);
+            offsets.Add(Vector2Int.down + Vector2Int.left);
+        }
+        else
+        {
+            offsets.Add(Vector2Int.right);
+            offsets.Add(Vector2Int.down + Vector2Int.right);
+        }
+        Debug.Log($"inputs are : {distDown}, {distLeft}, {distRight}, {playerGenDistance}, {smallDist}");
+        foreach (Vector2Int offset in offsets)
+        {
+            Debug.Log($"Gen Chunk at {offset.ToString()}");
+        }
+        return offsets.ToArray();
+    }
+
+    private void GenChunkHandler(Vector3 origin, Vector2Int[] chunkOffsets)
+    {
+        if (last.Count > Globals.lastChunks)
+        {
+            Vector3Int[] positionsToRemove = last.Dequeue();
+            world.SetTiles(positionsToRemove, new TileBase[positionsToRemove.Length]);
+        }
+
+        if (origin.y < Globals.PlanetList[Globals.planetID].GetBattleDepth() - 10)
+            return;
+
+        this.transform.position = origin;
+
+        List<Task<(Vector3Int[], TileBase[])>> chunkTasks = new List<Task<(Vector3Int[], TileBase[])>>();
+        foreach (Vector2Int chunk in chunkOffsets)
+            chunkTasks.Add(GenerateChunkDataAsync(chunk));
+        
+        Task.WaitAll(chunkTasks.ToArray());
+        foreach(Task<(Vector3Int[], TileBase[])> task in chunkTasks)
+        {
+            world.SetTiles(task.Result.Item1, task.Result.Item2);
+            last.Enqueue(task.Result.Item1);
+        }
+    }
+
+    private async Task<(Vector3Int[], TileBase[])> GenerateChunkDataAsync(Vector2Int chunkOffset)
+    {
+        List<Vector3Int> vector3Ints = new List<Vector3Int>();
+        List<TileBase> tileArr = new List<TileBase>();
+        List<Task<(Vector3Int[], TileBase[])>> rowTasks = new List<Task<(Vector3Int[], TileBase[])>>();
+
+        for (int y = 0; y < chunkSize; y++)
+        {
+            System.Drawing.Point start = new System.Drawing.Point();
+            start.X = (int)transform.position.x + chunkOffset.x * chunkSize;
+            start.Y = (int)transform.position.y + chunkOffset.y * chunkSize + y;
+            rowTasks.Add(GetChunkRowAsync(start, chunkSize));
+        }
+
+        Task.WaitAll(rowTasks.ToArray());
+        foreach (Task<(Vector3Int[], TileBase[])> task in rowTasks)
+        {
+            vector3Ints.AddRange(task.Result.Item1);
+            tileArr.AddRange(task.Result.Item2);
+        }
+        return (vector3Ints.ToArray(), tileArr.ToArray());
+    }
+
+    private async Task<(Vector3Int[], TileBase[])> GetChunkRowAsync(System.Drawing.Point start, int width)
+    {
+        Vector3Int[] vector3Ints = new Vector3Int[width];
+        TileBase[] tileArr = new TileBase[width];
+        for (int x = -width / 2; x < width / 2; x++)
+        {
+            int pos = x + (width / 2);
+            vector3Ints[pos] = new Vector3Int(x + start.X, start.Y, 0);
+            tileArr[pos] = Globals.PlanetList[Globals.planetID].GetResource(new System.Drawing.Point(vector3Ints[pos].x, vector3Ints[pos].y));
+        }
+
+        return (vector3Ints, tileArr);
+    }
+
 }
