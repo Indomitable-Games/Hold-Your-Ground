@@ -8,3 +8,5 @@ obj/
 *.csproj
 .vs/
 .vsconfig
+/Build
+/Assembly-CSharp-Editor.csproj
