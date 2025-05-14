@@ -20,7 +20,7 @@ namespace Assets.Scripts
         #endregion
 
         #region WorldGen Config
-        public static int lastChunks = 7;
+        public static int lastChunks = 15;
 
         public static int planetID = 0;
         #endregion
